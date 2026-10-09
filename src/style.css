@@ -98,7 +98,7 @@ main { min-width: 0; }
 .item-meta .heart { color: #e0245e; opacity: .7; margin-right: 1px; }
 .item-meta .orig { color: var(--link); }
 .item-meta a:hover { color: var(--hover); }
-.item-meta .age { color: var(--faint); }
+.item-meta .ts { color: var(--faint); white-space: nowrap; }
 .quote { margin: 0; padding: 0 0 0 14px; border-left: 2px solid var(--quote-rule); color: var(--body); font-size: 14.5px; line-height: 1.7; overflow-wrap: break-word; }
 .quote p { margin: 0 0 6px; }
 .quote p:last-child { margin-bottom: 0; }

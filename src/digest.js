@@ -24,6 +24,18 @@
   mq.addEventListener?.('change', syncTheme);
   syncTheme();
 
+  /* post timestamps: UTC in the HTML (no-JS fallback), viewer's local time via Intl */
+  try {
+    const short = new Intl.DateTimeFormat(undefined, { month: 'short', day: 'numeric', hour: '2-digit', minute: '2-digit', hourCycle: 'h23' });
+    const full = new Intl.DateTimeFormat(undefined, { dateStyle: 'full', timeStyle: 'long' });
+    document.querySelectorAll('time.ts[datetime]').forEach((el) => {
+      const d = new Date(el.getAttribute('datetime'));
+      if (isNaN(d)) return;
+      el.textContent = short.format(d);
+      el.title = full.format(d);
+    });
+  } catch { /* keep the UTC fallback */ }
+
   /* Chinese glosses & notes: one toggle, remembered */
   const zhBtn = document.querySelector('[data-toggle-zh]');
   const zhLabel = document.querySelector('[data-zh-label]');

@@ -29,7 +29,7 @@ ITEM_RE = re.compile(
     r"^\*\*(?:(?P<num>\d+)\.\s+)?(?P<headline>.+?)\*\*\s*·\s*"
     r"\[(?P<linktext>[^\]]+)\]\((?P<url>[^)\s]+)\)"
     r"(?:\s*·\s*♥\s*(?P<likes>[^·]+?))?"
-    r"(?:\s*·\s*(?P<age>.+?))?\s*$"
+    r"(?:\s*·\s*(?P<created>.+?))?\s*$"
 )
 SUMMARY_RE = re.compile(r"^(?:summary|tl;?dr)\s*:\s*(.+)$", re.I)
 EXPLICIT_GLOSS_RE = re.compile(r"\[\[([^\[\]|]+)\|([^\[\]]+)\]\]")
@@ -43,7 +43,7 @@ class Item:
     headline: str
     url: str
     likes: str = ""
-    age: str = ""
+    created: dt.datetime | None = None  # UTC, from the X API created_at
     quote: list[str] = field(default_factory=list)
     notes: list[str] = field(default_factory=list)
 
@@ -132,6 +132,21 @@ def normalize_legacy_glosses(text: str) -> str:
     return "".join(out)
 
 
+ISO_RE = re.compile(r"^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}(?::\d{2}(?:\.\d+)?)?(?:Z|[+-]\d{2}:?\d{2})$")
+
+
+def parse_created(token: str, fname: str, lineno: int) -> dt.datetime | None:
+    """Last header token: ISO 8601 created_at (e.g. 2026-10-08T18:05:00Z). Legacy "35h ago" is ignored."""
+    token = token.strip()
+    if not token:
+        return None
+    if ISO_RE.match(token):
+        return dt.datetime.fromisoformat(token.replace("Z", "+00:00")).astimezone(dt.timezone.utc)
+    if not re.fullmatch(r"\d+\s*[smhd]\w*\s+ago", token):
+        print(f"warning: {fname}:{lineno}: unrecognised timestamp ignored: {token!r}", file=sys.stderr)
+    return None
+
+
 def parse_day(path: Path) -> Day:
     date = dt.date.fromisoformat(FILE_RE.match(path.name).group(1))
     items: list[Item] = []
@@ -154,7 +169,7 @@ def parse_day(path: Path) -> Day:
                 headline=normalize_legacy_glosses(m.group("headline").strip()),
                 url=m.group("url"),
                 likes=(m.group("likes") or "").strip(),
-                age=(m.group("age") or "").strip(),
+                created=parse_created(m.group("created") or "", path.name, lineno),
             ))
             continue
         if skipping:
@@ -270,8 +285,11 @@ def render_item(n: int, item: Item) -> str:
         meta.append(f'<span class="likes"><span class="heart" aria-hidden="true">♥</span>'
                     f'<span class="sr-only">Likes:</span> {esc(item.likes)}</span>')
     meta.append(f'<a class="orig" href="{esc(item.url)}" rel="noopener">Original <span aria-hidden="true">↗</span></a>')
-    if item.age:
-        meta.append(f'<span class="age">{esc(item.age)}</span>')
+    if item.created:
+        c = item.created
+        iso = c.strftime("%Y-%m-%dT%H:%M:%SZ")
+        meta.append(f'<time class="ts" datetime="{iso}" title="{c.strftime("%Y-%m-%d %H:%M")} UTC">'
+                    f'{c.strftime("%b")} {c.day}, {c.strftime("%H:%M")} UTC</time>')
     sep = '<span class="dot" aria-hidden="true">·</span>'
     quote_html = f'<blockquote class="quote" cite="{esc(item.url)}">{quote}</blockquote>' if quote else ""
     return f"""        <article class="item" id="p{n}">

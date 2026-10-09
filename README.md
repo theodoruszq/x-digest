@@ -26,18 +26,23 @@ Local preview: `python3 build.py && (cd docs && python3 -m http.server 8765)`.
 Summary: Anthropic cuts Haiku cost 75%; Google ships Gemini work agent; AI Big 10 hit 42% of US market cap.
 
 <!-- update 2026-10-09 PM -->
-**Anthropic launches Claude Haiku 5.5, ~75% cheaper** · [Original](https://x.com/claudeai/status/2107894039626277339) · ♥ 44k · 35h ago
+**Anthropic launches Claude Haiku 5.5, ~75% cheaper** · [Original](https://x.com/claudeai/status/2107894039626277339) · ♥ 44k · 2026-10-07T18:01:16Z
 > Introducing Claude Haiku 5.5: … it costs around 75% less to run than Claude Haiku 4.5.
 
-**GPT-6 and Intelligent UI roll out to all ChatGPT users** · [Original](https://x.com/OpenAI/status/2107894997538525580) · ♥ 22k
+**GPT-6 and Intelligent UI roll out to all ChatGPT users** · [Original](https://x.com/OpenAI/status/2107894997538525580) · ♥ 22k · 2026-10-07T18:05:04Z
 > GPT-6 and Intelligent UI, now [[rolling out|v. 逐步推出]] in ChatGPT for everyone …
 💡 Optional Chinese note.
 ```
 
 - `Summary:` — 1–2 sentences, plain English, terse headline style ("X cuts…; Y ships…"). Shown on the home page
   and at the top of the day page. (Any plain text before the first post also counts as summary.)
-- Post header: `**Headline** · [Original](url) · ♥ likes · age`. A leading `N. ` in the headline is allowed and
-  ignored — posts are numbered in file order, so new posts can simply be appended. Likes and age are optional.
+- Post header: `**Headline** · [Original](url) · ♥ likes · created_at`. A leading `N. ` in the headline is allowed and
+  ignored — posts are numbered in file order, so new posts can simply be appended. Likes and created_at are optional.
+- `created_at`: the post's exact creation time in ISO 8601 UTC, straight from the X API (`get_posts_by_ids` with
+  `post.fields=created_at`), e.g. `2026-10-08T18:05:00Z` (fractional seconds / `+00:00` offsets also accepted).
+  The page shows it in the viewer's local time zone via `Intl` ("Oct 9, 03:01"; full date + zone on hover),
+  inside `<time datetime>`; without JavaScript it reads "Oct 8, 18:05 UTC". Old relative ages ("35h ago") are
+  accepted but not shown.
 - `>` lines: the original text (English first; Chinese originals are fine). Trim to the informative part with `…`,
   without changing meaning. Several `>` lines = several paragraphs.
 - Glosses: `[[phrase|pos. 中文]]` (pos optional, e.g. `[[$20B short|比预期少 200 亿美元]]`); works in headlines too.
