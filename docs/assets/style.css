@@ -42,26 +42,30 @@ h1, h2, h3 { margin: 0; font-weight: 400; line-height: 1.35; }
 h1 { font-size: 32px; }
 .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
 
-/* ---- shell: same grid as the home site ---- */
-.site-shell { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 48px; width: calc(100% - 64px); max-width: 960px; margin: 48px auto 0; }
+/* ---- shell: same 960px frame as the home site; left rail = month archive ---- */
+.site-shell { width: calc(100% - 64px); max-width: 960px; margin: 48px auto 0; }
 main { min-width: 0; }
-.sidebar { padding-top: 44px; }
-.sidebar-content { position: sticky; top: 48px; }
-.sidebar nav { display: grid; gap: 4px; }
-.sidebar a { display: block; width: fit-content; padding: 7px 0; color: var(--muted); }
-.sidebar a:hover { color: var(--hover); }
-.sidebar a[aria-current] { color: var(--link); }
+.row { display: grid; grid-template-columns: 112px minmax(0, 1fr); gap: 48px; }
+.col { min-width: 0; }
+.rail { min-width: 0; }
+.month-label { position: sticky; top: 24px; display: block; padding: 17px 0 0; color: var(--muted); font-size: 14px; font-weight: 400;
+  font-variant-numeric: tabular-nums; letter-spacing: .02em; line-height: 1.6; }
+.month-label a, a.month-label { color: var(--muted); }
+.month-label a:hover, a.month-label:hover { color: var(--hover); }
+.rail > a.month-label { padding-top: 46px; }
 .skip-link { position: fixed; top: -80px; left: 16px; background: var(--bg); padding: 10px 16px; z-index: 5; }
 .skip-link:focus { top: 12px; }
 .toolbar { position: absolute; top: 10px; right: 24px; font-size: 11px; z-index: 3; }
 .tool { appearance: none; border: 0; background: none; padding: 6px 2px; min-height: 32px; color: var(--muted); font: inherit; cursor: pointer; }
 .tool:hover { color: var(--link); }
+.month { scroll-margin-top: 16px; }
+.month + .month .days { border-top: 0; }
 
 /* ---- index ---- */
-.archive-header { padding: 0 20px; margin-bottom: 30px; }
+.archive-header { padding: 0 20px; margin-bottom: 14px; }
 .archive-header h1 { margin-bottom: 12px; }
 .archive-header p { margin: 0; color: var(--body); }
-.days { display: grid; gap: 0; padding: 0 20px; }
+.days { display: grid; gap: 0; padding: 0 20px 6px; }
 .day-entry { padding: 16px 0 18px; border-top: 1px solid var(--rule); }
 .entry-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; margin-bottom: 4px; }
 .entry-heading h2 { flex: 1 1 260px; font-size: 15px; font-weight: 700; line-height: 1.6; }
@@ -116,22 +120,24 @@ main { min-width: 0; }
 .pager-next { text-align: right; justify-self: end; }
 .pager-kicker { color: var(--muted); font-size: 12px; }
 
-.site-footer { margin: 40px 20px 28px; color: var(--muted); font-size: 11px; line-height: 1.8; text-align: right; }
+.site-footer { margin: 34px 0 28px; padding: 0 20px; color: var(--muted); font-size: 11px; line-height: 1.8; text-align: right; }
 .site-footer p { margin: 0; }
 .site-footer a { color: inherit; }
 .site-footer a:hover { color: var(--link); }
-.post + .site-footer { max-width: 680px; }
+.page-day .site-footer { max-width: 720px; }
 
 @media (max-width: 760px) {
-  .site-shell { display: block; width: calc(100% - 40px); margin-top: 40px; }
-  .sidebar { padding: 0; margin: 0 0 16px; }
-  .sidebar-content { position: static; }
-  .sidebar nav { display: flex; flex-wrap: wrap; gap: 0 28px; }
-  .sidebar a { padding: 10px 0; }
+  .site-shell { width: calc(100% - 40px); margin-top: 40px; }
+  .row { display: block; }
+  .rail:empty { display: none; }
+  .month-label, .rail > a.month-label { position: static; display: block; padding: 6px 0 6px; margin: 4px 0 0; border-bottom: 1px solid var(--rule);
+    font-size: 12px; font-weight: 700; color: var(--muted); }
+  .month .day-entry:first-child { border-top: 0; }
+  .rail > a.month-label { display: inline-block; border: 0; padding: 0; margin: 0 0 4px; }
   .toolbar { top: 8px; right: 14px; }
   .archive-header, .days, .post { padding-left: 0; padding-right: 0; }
   .post-header h1 { font-size: 24px; }
-  .site-footer { margin-left: 0; margin-right: 0; text-align: left; }
+  .site-footer { padding: 0; text-align: left; }
 }
 @media (max-width: 480px) {
   .item { grid-template-columns: 18px minmax(0, 1fr); gap: 6px; }
@@ -139,4 +145,4 @@ main { min-width: 0; }
   .quote { padding-left: 12px; }
 }
 @media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
-@media print { .sidebar, .toolbar, .skip-link, .back-link, .pager, .site-footer, .zh-toggle { display: none; } .site-shell { display: block; width: 100%; margin: 0; } }
+@media print { .rail, .toolbar, .skip-link, .back-link, .pager, .site-footer, .zh-toggle { display: none; } .site-shell { width: 100%; margin: 0; } .row { display: block; } }

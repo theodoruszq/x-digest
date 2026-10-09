@@ -228,7 +228,7 @@ BOOT = ("<script>(function(){try{var d=document.documentElement,t=localStorage.g
         "if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>")
 
 
-def page(title: str, description: str, canonical: str, body: str) -> str:
+def page(title: str, description: str, canonical: str, body: str, kind: str = "index") -> str:
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -250,23 +250,18 @@ def page(title: str, description: str, canonical: str, body: str) -> str:
   {BOOT}
   <script src="assets/digest.js" defer></script>
 </head>
-<body>
+<body class="page-{kind}">
   <a class="skip-link" href="#main">Skip to content</a>
   <div class="toolbar"><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
   <div class="site-shell">
-    <aside class="sidebar"><div class="sidebar-content">
-      <nav aria-label="Main navigation">
-        <a href="{HOME_URL}">About</a>
-        <a href="{HOME_URL}posts/">Blogs</a>
-        <a href="{HOME_URL}creations/">Creations</a>
-        <a href="./" aria-current="page">X Digest</a>
-      </nav>
-    </div></aside>
     <main id="main">
 {body}
-      <footer class="site-footer">
-        <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day. · <a href="{HOME_URL}">Digital Reality</a></p>
-      </footer>
+      <div class="row">
+        <div class="rail"></div>
+        <footer class="col site-footer">
+          <p><a href="{HOME_URL}">About</a> · Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+        </footer>
+      </div>
     </main>
   </div>
 </body>
@@ -317,7 +312,10 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
                 f'<span class="pager-title">{esc(d.date_long)}</span></a>')
 
     lede = f'<p class="lede">{esc(day.summary)}</p>' if day.summary else ""
-    body = f"""      <article class="post day-page">
+    mk = day.date.strftime("%Y-%m")
+    body = f"""      <div class="row">
+      <div class="rail"><a class="month-label" href="./#m{mk}" title="All days in {mk}">{mk}</a></div>
+      <article class="col post day-page">
         <header class="post-header">
           <a class="back-link" href="./">← All days</a>
           <h1>{esc(day.date_long)}</h1>
@@ -331,30 +329,44 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
           {nav(older, "prev")}
           {nav(newer, "next")}
         </nav>
-      </article>"""
+      </article>
+      </div>"""
     return page(f"{day.date_long} · {SITE_NAME}", day.summary or plain(day.items[0].headline if day.items else ""),
-                f"{SITE_URL}{day.slug}.html", body)
+                f"{SITE_URL}{day.slug}.html", body, kind="day")
 
 
 def day_summary(day: Day) -> str:
     return day.summary or "; ".join(plain(i.headline) for i in day.items[:3]) + "."
 
 
-def render_index(days: list[Day]) -> str:
-    entries = "\n".join(f"""        <article class="day-entry">
+def render_entry(d: Day) -> str:
+    return f"""        <article class="day-entry">
           <div class="entry-heading">
             <h2><a href="{d.slug}.html">{esc(d.date_long)}</a></h2>
             <p class="entry-meta">{plural(len(d.items), "post")}</p>
           </div>
           <p class="day-summary">{esc(day_summary(d))}</p>
-        </article>""" for d in days)
-    body = f"""      <header class="archive-header">
-        <h1>X Digest</h1>
-        <p>The day’s most useful posts on X, collected twice a day and quoted from the source.</p>
-      </header>
-      <div class="days">
-{entries}
-      </div>"""
+        </article>"""
+
+
+def render_index(days: list[Day]) -> str:
+    months: dict[str, list[Day]] = {}
+    for d in days:  # newest first
+        months.setdefault(d.date.strftime("%Y-%m"), []).append(d)
+    sections = "\n".join(f"""      <section class="row month" id="m{mk}" aria-labelledby="ml{mk}">
+        <div class="rail"><h2 class="month-label" id="ml{mk}"><a href="#m{mk}">{mk}</a></h2></div>
+        <div class="col days">
+{chr(10).join(render_entry(d) for d in ds)}
+        </div>
+      </section>""" for mk, ds in months.items())
+    body = f"""      <div class="row">
+        <div class="rail"></div>
+        <header class="col archive-header">
+          <h1>X Digest</h1>
+          <p>The day’s most useful posts on X, collected twice a day and quoted from the source.</p>
+        </header>
+      </div>
+{sections}"""
     return page(f"{SITE_NAME} · Digital Reality", "A daily digest of the most useful posts on X.", SITE_URL, body)
 
 

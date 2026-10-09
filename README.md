@@ -1,7 +1,8 @@
 # X Digest
 
 A daily digest of the most useful posts on X, published at <https://theodoruszq.github.io/x-digest/>.
-Styled to match <https://theodoruszq.github.io/> (Lato from the user site's `/fonts/`, same sidebar grid and colours).
+Styled to match <https://theodoruszq.github.io/> (Lato from the user site's `/fonts/`, same 960px frame and colours).
+The left column is a month archive (`2026-10`, sticky beside that month's days; a header on mobile); the footer links to About.
 
 ```
 content/YYYY-MM-DD.md   one source file per day
@@ -16,7 +17,7 @@ screenshots.py          optional Playwright screenshots
 1. Append the new posts to today's file (`YYYY-MM-DD.md`, created on the first run of the day) and refresh the
    `Summary:` line so it covers the whole day. Keep ~15 best posts max; don't pad.
 2. `./publish.sh` — copies `/workspace/x-digest/YYYY-MM-DD.md` (override with `X_DIGEST_SRC`) into `content/`,
-   runs `build.py`, commits and pushes. Pages redeploys in about a minute.
+   runs `build.py`, commits if anything changed, and pushes whenever local `main` differs from GitHub. Pages redeploys in about a minute.
 
 Local preview: `python3 build.py && (cd docs && python3 -m http.server 8765)`.
 
