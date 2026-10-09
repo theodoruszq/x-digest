@@ -1,9 +1,9 @@
 /* X Digest — visual language of theodoruszq.github.io (Digital Reality). */
-/* /fonts/ resolves to the user site (theodoruszq.github.io/fonts/) — same origin as this project page. */
+/* Lato woff2 vendored from theodoruszq.github.io/fonts/ (assets/fonts/, relative to this file). */
 @font-face { font-family: Lato; font-style: normal; font-weight: 400; font-display: swap;
-  src: local('Lato Regular'), local('Lato-Regular'), url('/fonts/lato-regular.woff2') format('woff2'); }
+  src: local('Lato Regular'), local('Lato-Regular'), url('fonts/lato-regular.woff2') format('woff2'); }
 @font-face { font-family: Lato; font-style: normal; font-weight: 700; font-display: swap;
-  src: local('Lato Bold'), local('Lato-Bold'), url('/fonts/lato-bold.woff2') format('woff2'); }
+  src: local('Lato Bold'), local('Lato-Bold'), url('fonts/lato-bold.woff2') format('woff2'); }
 
 :root {
   color-scheme: light;
@@ -55,7 +55,9 @@ main { min-width: 0; }
 .rail > a.month-label { padding-top: 46px; }
 .skip-link { position: fixed; top: -80px; left: 16px; background: var(--bg); padding: 10px 16px; z-index: 5; }
 .skip-link:focus { top: 12px; }
-.toolbar { position: absolute; top: 10px; right: 24px; font-size: 11px; z-index: 3; }
+.toolbar { position: absolute; top: 10px; right: 24px; display: flex; align-items: center; gap: 6px; font-size: 11px; z-index: 3; }
+.tool-sep { color: var(--faint); }
+a.tool { display: inline-flex; align-items: center; }
 .tool { appearance: none; border: 0; background: none; padding: 6px 2px; min-height: 32px; color: var(--muted); font: inherit; cursor: pointer; }
 .tool:hover { color: var(--link); }
 .month { scroll-margin-top: 16px; }

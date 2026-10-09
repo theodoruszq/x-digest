@@ -1,12 +1,14 @@
 # X Digest
 
-A daily digest of the most useful posts on X, published at <https://theodoruszq.github.io/x-digest/>.
-Styled to match <https://theodoruszq.github.io/> (Lato from the user site's `/fonts/`, same 960px frame and colours).
-The left column is a month archive (`2026-10`, sticky beside that month's days; a header on mobile); the footer links to About.
+A daily digest of the most useful posts on X, published at <https://x-digest.theodoruszq.win/>
+(custom domain; `build.py` writes `docs/CNAME` on every build) and <https://theodoruszq.github.io/x-digest/>.
+All internal links and assets are relative, so the site works at a domain root or under `/x-digest/`.
+Styled to match <https://theodoruszq.github.io/> (Lato woff2 vendored from its `/fonts/` into `src/fonts/`, same 960px frame and colours).
+The left column is a month archive (`2026-10`, sticky beside that month's days; a header on mobile); a small About link (theodoruszq.github.io) sits top-right next to the theme toggle.
 
 ```
 content/YYYY-MM-DD.md   one source file per day
-src/                    style.css, digest.js (copied to docs/assets on build)
+src/                    style.css, digest.js, favicon, fonts/ (copied to docs/assets on build)
 build.py                content/ → docs/ (pure Python 3.9+, no dependencies)
 docs/                   built site — GitHub Pages serves main:/docs
 publish.sh              sync day files from $X_DIGEST_SRC, rebuild, commit, push

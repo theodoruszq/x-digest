@@ -20,7 +20,8 @@ from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
 HOME_URL = "https://theodoruszq.github.io/"
-SITE_URL = "https://theodoruszq.github.io/x-digest/"
+SITE_URL = "https://x-digest.theodoruszq.win/"  # canonical; also served at theodoruszq.github.io/x-digest/
+CNAME = "x-digest.theodoruszq.win"
 SITE_NAME = "X Digest"
 
 CJK = r"\u3400-\u9fff\uf900-\ufaff\u3000-\u303f\uff00-\uffef"
@@ -240,26 +241,26 @@ def page(title: str, description: str, canonical: str, body: str, kind: str = "i
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
   <link rel="canonical" href="{esc(canonical)}">
-  <link rel="icon" href="/favicon-32x32.png?v=white-1" type="image/png">
+  <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
   <meta property="og:type" content="website">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:url" content="{esc(canonical)}">
-  <link rel="preload" href="/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/style.css">
   {BOOT}
   <script src="assets/digest.js" defer></script>
 </head>
 <body class="page-{kind}">
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="toolbar"><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="toolbar"><a class="tool" href="{HOME_URL}">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
   <div class="site-shell">
     <main id="main">
 {body}
       <div class="row">
         <div class="rail"></div>
         <footer class="col site-footer">
-          <p><a href="{HOME_URL}">About</a> · Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+          <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
         </footer>
       </div>
     </main>
@@ -385,9 +386,11 @@ def main() -> None:
     for old in out.glob("*.html"):  # drop pages for days that no longer exist
         old.unlink()
     (out / "assets").mkdir(exist_ok=True)
-    for name in ("style.css", "digest.js"):
+    for name in ("style.css", "digest.js", "favicon-32x32.png"):
         shutil.copyfile(HERE / "src" / name, out / "assets" / name)
+    shutil.copytree(HERE / "src" / "fonts", out / "assets" / "fonts", dirs_exist_ok=True)
     (out / ".nojekyll").write_text("")
+    (out / "CNAME").write_text(CNAME)
     for i, d in enumerate(days):
         older = days[i - 1] if i > 0 else None
         newer = days[i + 1] if i + 1 < len(days) else None
