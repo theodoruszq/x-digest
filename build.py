@@ -232,6 +232,10 @@ EXT_ICON = ('<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hi
             '<path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" '
             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
+import hashlib
+# cache-busting version for CSS/JS (GitHub Pages caches assets for ~10 min)
+ASSET_VER = hashlib.sha1(b"".join((HERE / "src" / n).read_bytes() for n in ("style.css", "digest.js"))).hexdigest()[:8]
+
 BOOT = ("<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');"
         "if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>")
 
@@ -254,9 +258,9 @@ def page(title: str, description: str, canonical: str, body: str, kind: str = "i
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:url" content="{esc(canonical)}">
   <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css">
+  <link rel="stylesheet" href="assets/style.css?v={ASSET_VER}">
   {BOOT}
-  <script src="assets/digest.js" defer></script>
+  <script src="assets/digest.js?v={ASSET_VER}" defer></script>
 </head>
 <body class="page-{kind}">
   <a class="skip-link" href="#main">Skip to content</a>
