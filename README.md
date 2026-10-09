@@ -26,7 +26,10 @@ Local preview: `python3 build.py && (cd docs && python3 -m http.server 8765)`.
 ## Day file format
 
 ```markdown
-Summary: Anthropic cuts Haiku cost 75%; Google ships Gemini work agent; AI Big 10 hit 42% of US market cap.
+Summary:
+- Anthropic cuts Haiku cost 75%
+- Google ships Gemini work agent
+- AI Big 10 hit record 42% of US market cap
 
 <!-- update 2026-10-09 PM -->
 **Anthropic launches Claude Haiku 5.5, ~75% cheaper** · [Original](https://x.com/claudeai/status/2107894039626277339) · ♥ 44k · 2026-10-07T18:01:16Z
@@ -37,8 +40,9 @@ Summary: Anthropic cuts Haiku cost 75%; Google ships Gemini work agent; AI Big 1
 💡 Optional Chinese note.
 ```
 
-- `Summary:` — 1–2 sentences, plain English, terse headline style ("X cuts…; Y ships…"). Shown on the home page
-  and at the top of the day page. (Any plain text before the first post also counts as summary.)
+- `Summary:` followed by 3–6 `- ` bullet lines: short, plain-English noun+verb items ("OpenAI rolls GPT-6 out
+  to all users"), no trailing period. Rendered as a dot list on the home page and at the top of the day page.
+  Refresh it on each update so it covers the whole day. (A legacy one-line `Summary: a; b; c` is split on `;`.)
 - Post header: `**Headline** · [Original](url) · ♥ likes · created_at`. A leading `N. ` in the headline is allowed and
   ignored — posts are numbered in file order, so new posts can simply be appended. Likes and created_at are optional.
 - `created_at`: the post's exact creation time in ISO 8601 UTC, straight from the X API (`get_posts_by_ids` with

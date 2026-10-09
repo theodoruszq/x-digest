@@ -72,14 +72,20 @@ a.tool { display: inline-flex; align-items: center; }
 .entry-heading { display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 16px; margin-bottom: 4px; }
 .entry-heading h2 { flex: 1 1 260px; font-size: 15px; font-weight: 700; line-height: 1.6; }
 .entry-meta { margin: 0; color: var(--muted); font-size: 12px; white-space: nowrap; }
-.day-summary { margin: 0; color: var(--body); line-height: 1.7; }
+/* summary bullets (home + day page) */
+.summary-list { list-style: none; margin: 0; padding: 0; color: var(--body); }
+.summary-list li { position: relative; padding-left: 14px; }
+.summary-list li::before { content: ""; position: absolute; left: 2px; top: .72em; width: 4px; height: 4px; border-radius: 50%; background: var(--faint); }
+.day-summary { line-height: 1.65; }
+.day-summary li + li { margin-top: 1px; }
 
 /* ---- day page ---- */
 .post { max-width: 720px; padding: 0 20px; }
 .post-header { margin-bottom: 6px; }
 .back-link { display: inline-block; margin-bottom: 12px; font-size: 13px; }
 .post-header h1 { font-size: 26px; line-height: 1.4; margin-bottom: 8px; }
-.lede { margin: 0 0 14px; color: var(--body); font-size: 15px; line-height: 1.7; text-wrap: pretty; }
+.lede { margin: 0 0 14px; font-size: 15px; line-height: 1.7; }
+.lede li::before { top: .75em; }
 .post-tools { display: flex; align-items: center; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding-bottom: 12px; }
 .zh-toggle {
   appearance: none; display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px 4px 4px; min-height: 30px;

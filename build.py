@@ -32,7 +32,7 @@ ITEM_RE = re.compile(
     r"(?:\s*·\s*♥\s*(?P<likes>[^·]+?))?"
     r"(?:\s*·\s*(?P<created>.+?))?\s*$"
 )
-SUMMARY_RE = re.compile(r"^(?:summary|tl;?dr)\s*:\s*(.+)$", re.I)
+SUMMARY_RE = re.compile(r"^(?:summary|tl;?dr)\s*:\s*(.*)$", re.I)
 EXPLICIT_GLOSS_RE = re.compile(r"\[\[([^\[\]|]+)\|([^\[\]]+)\]\]")
 LEGACY_GLOSS_RE = re.compile(r"\s?\(([^()]*[" + CJK + r"][^()]*)\)")
 POS_RE = re.compile(r"^((?:[a-z]{1,5}\.)(?:\s*/\s*[a-z]{1,5}\.)*|idiom|phrase|phr\.)\s+(.+)$")
@@ -58,7 +58,7 @@ class Item:
 class Day:
     date: dt.date
     items: list[Item]
-    summary: str = ""
+    summary: list[str] = field(default_factory=list)  # bullet points
 
     @property
     def slug(self) -> str:
@@ -177,11 +177,12 @@ def parse_day(path: Path) -> Day:
             continue
         sm = SUMMARY_RE.match(line)
         if sm:
-            summary.append(sm.group(1).strip())
+            if sm.group(1).strip():  # legacy one-line summary: split on ";" into bullets
+                summary.extend(x.strip().rstrip(".") for x in sm.group(1).split(";") if x.strip())
             continue
         if not items:
             if not line.startswith("#"):
-                summary.append(line)
+                summary.append(re.sub(r"^[-*•]\s+", "", line).rstrip("."))
             continue
         if line.startswith(">"):
             items[-1].quote.append(normalize_legacy_glosses(line.lstrip(">").strip()))
@@ -191,7 +192,7 @@ def parse_day(path: Path) -> Day:
             print(f"warning: {path.name}:{lineno}: unrecognised line ignored: {line[:60]!r}", file=sys.stderr)
     if not items:
         print(f"warning: {path.name}: no items found", file=sys.stderr)
-    return Day(date=date, items=items, summary=" ".join(summary))
+    return Day(date=date, items=items, summary=summary)
 
 
 # --------------------------------------------------------------------------- rendering
@@ -312,7 +313,7 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
         return (f'<a class="pager-{rel}" rel="{rel}" href="{d.slug}.html"><span class="pager-kicker">{kicker}</span>'
                 f'<span class="pager-title">{esc(d.date_long)}</span></a>')
 
-    lede = f'<p class="lede">{esc(day.summary)}</p>' if day.summary else ""
+    lede = render_summary(day.summary, "lede")
     mk = day.date.strftime("%Y-%m")
     body = f"""      <div class="row">
       <div class="rail"><a class="month-label" href="./#m{mk}" title="All days in {mk}">{mk}</a></div>
@@ -332,12 +333,18 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
         </nav>
       </article>
       </div>"""
-    return page(f"{day.date_long} · {SITE_NAME}", day.summary or plain(day.items[0].headline if day.items else ""),
+    return page(f"{day.date_long} · {SITE_NAME}", "; ".join(day_summary(day)) + ".",
                 f"{SITE_URL}{day.slug}.html", body, kind="day")
 
 
-def day_summary(day: Day) -> str:
-    return day.summary or "; ".join(plain(i.headline) for i in day.items[:3]) + "."
+def day_summary(day: Day) -> list[str]:
+    return day.summary or [plain(i.headline) for i in day.items[:3]]
+
+
+def render_summary(points: list[str], cls: str) -> str:
+    if not points:
+        return ""
+    return f'<ul class="summary-list {cls}">' + "".join(f"<li>{esc(p)}</li>" for p in points) + "</ul>"
 
 
 def render_entry(d: Day) -> str:
@@ -346,7 +353,7 @@ def render_entry(d: Day) -> str:
             <h2><a href="{d.slug}.html">{esc(d.date_long)}</a></h2>
             <p class="entry-meta">{plural(len(d.items), "post")}</p>
           </div>
-          <p class="day-summary">{esc(day_summary(d))}</p>
+          {render_summary(day_summary(d), "day-summary")}
         </article>"""
 
 
