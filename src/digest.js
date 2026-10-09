@@ -38,11 +38,8 @@
 
   /* Chinese glosses & notes: one toggle, remembered */
   const zhBtn = document.querySelector('[data-toggle-zh]');
-  const zhLabel = document.querySelector('[data-zh-label]');
   const syncZh = () => {
-    const on = root.classList.contains('show-zh');
-    zhBtn?.setAttribute('aria-pressed', String(on));
-    if (zhLabel) zhLabel.textContent = on ? 'Hide Chinese glosses & notes' : 'Show Chinese glosses & notes';
+    zhBtn?.setAttribute('aria-checked', String(root.classList.contains('show-zh')));
   };
   zhBtn?.addEventListener('click', () => {
     root.classList.toggle('show-zh');

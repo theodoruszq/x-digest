@@ -26,7 +26,16 @@ with sync_playwright() as p:
     print("Lato font faces:", fonts, "| check Lato 400:", pg.evaluate("document.fonts.check('16px Lato')"))
     print("local timestamp (Asia/Shanghai):", pg.locator("time.ts").first.inner_text(), "|", pg.locator("time.ts").first.get_attribute("title"))
     pg.screenshot(path=OUT / f"{PREFIX}-desktop-day.png")
-    pg.click("[data-toggle-zh]"); pg.wait_for_timeout(200)
+    def crop_box():
+        t = pg.locator(".post-tools").bounding_box()
+        return {"x": t["x"] - 16, "y": t["y"] - 70, "width": t["width"] + 32, "height": 230}
+    clip = lambda: pg.screenshot(path=OUT / f"{PREFIX}-switch-{'on' if pg.get_attribute('[data-toggle-zh]', 'aria-checked') == 'true' else 'off'}-crop.png",
+                                 clip=crop_box())
+    clip()
+    pg.focus("[data-toggle-zh]"); pg.keyboard.press("Space"); pg.wait_for_timeout(350)
+    print("keyboard toggle -> aria-checked:", pg.get_attribute("[data-toggle-zh]", "aria-checked"))
+    pg.evaluate("document.activeElement.blur()")
+    clip()
     pg.screenshot(path=OUT / f"{PREFIX}-desktop-day-glosses-on.png")
     pg.evaluate("window.scrollTo(0, document.querySelector('#p8').offsetTop - 20)")
     pg.screenshot(path=OUT / f"{PREFIX}-desktop-day-glosses-on-scrolled.png")

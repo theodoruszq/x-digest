@@ -226,7 +226,13 @@ def render_inline(text: str) -> str:
     return "".join(out)
 
 
-BOOT = ("<script>(function(){try{var d=document.documentElement,t=localStorage.getItem('xdigest.theme');"
+EXT_ICON = ('<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false">'
+            '<path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" '
+            'fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>'
+            '<path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" '
+            'stroke-linecap="round" stroke-linejoin="round"/></svg>')
+
+BOOT = ("<script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');"
         "if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>")
 
 
@@ -281,7 +287,7 @@ def render_item(n: int, item: Item) -> str:
     if item.likes:
         meta.append(f'<span class="likes"><span class="heart" aria-hidden="true">♥</span>'
                     f'<span class="sr-only">Likes:</span> {esc(item.likes)}</span>')
-    meta.append(f'<a class="orig" href="{esc(item.url)}" rel="noopener">Original <span aria-hidden="true">↗</span></a>')
+    meta.append(f'<a class="orig" href="{esc(item.url)}" rel="noopener">Original{EXT_ICON}</a>')
     if item.created:
         c = item.created
         iso = c.strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -302,9 +308,10 @@ def render_item(n: int, item: Item) -> str:
 def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
     items = "\n".join(render_item(i, it) for i, it in enumerate(day.items, 1))
     has_zh = any(EXPLICIT_GLOSS_RE.search(it.headline + " ".join(it.quote)) or it.notes for it in day.items)
-    toggle = ('<button type="button" class="zh-toggle" data-toggle-zh aria-pressed="false">'
-              '<span class="zh-toggle-icon" aria-hidden="true">中</span>'
-              '<span data-zh-label>Show Chinese glosses &amp; notes</span></button>') if has_zh else ""
+    toggle = ('<button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh '
+              'aria-label="Chinese glosses and notes" title="Chinese glosses &amp; notes">'
+              '<span class="zh-switch-label" lang="zh-Hans" aria-hidden="true">中文</span>'
+              '<span class="zh-switch-track" aria-hidden="true"><span class="zh-switch-knob"></span></span></button>') if has_zh else ""
 
     def nav(d: Day | None, rel: str) -> str:
         if not d:
