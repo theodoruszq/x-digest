@@ -2,6 +2,9 @@
 
 A daily digest of the most useful posts on X, published at <https://x-digest.theodoruszq.win/>
 (custom domain; `build.py` writes `docs/CNAME` on every build) and <https://theodoruszq.github.io/x-digest/>.
+Permanent latest-day URL: <https://x-digest.theodoruszq.win/today/> (also `/today.html`) — the newest day rendered in
+place (no redirect), with no-cache meta; `latest.json` lets a stale cached copy jump to the newest day. A web app
+manifest (`start_url: ./today/`), apple-touch-icon and apple-mobile-web-app meta make it a good home-screen app.
 All internal links and assets are relative, so the site works at a domain root or under `/x-digest/`.
 Styled to match <https://theodoruszq.github.io/> (Lato woff2 vendored from its `/fonts/` into `src/fonts/`, same 960px frame and colours).
 The left column is a month archive (`2026-10`, sticky beside that month's days; a header on mobile); a small About link (theodoruszq.github.io) sits top-right next to the theme toggle.

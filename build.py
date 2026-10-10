@@ -233,6 +233,23 @@ EXT_ICON = ('<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hi
             'stroke-linecap="round" stroke-linejoin="round"/></svg>')
 
 import hashlib
+import json
+
+NO_CACHE = """
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">"""
+MANIFEST = {
+    "name": "X Digest", "short_name": "X Digest",
+    "description": "The day\u2019s most useful posts on X.",
+    "start_url": "./today/", "scope": "./", "display": "standalone",
+    "background_color": "#ffffff", "theme_color": "#ffffff",
+    "icons": [
+        {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+        {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+        {"src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+    ],
+}
 # cache-busting version for CSS/JS (GitHub Pages caches assets for ~10 min)
 ASSET_VER = hashlib.sha1(b"".join((HERE / "src" / n).read_bytes() for n in ("style.css", "digest.js"))).hexdigest()[:8]
 
@@ -240,7 +257,9 @@ BOOT = ("<script>(function(){var d=document.documentElement;d.classList.add('js'
         "if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>")
 
 
-def page(title: str, description: str, canonical: str, body: str, kind: str = "index") -> str:
+def page(title: str, description: str, canonical: str, body: str, kind: str = "index", prefix: str = "",
+         extra_head: str = "", today: Day | None = None) -> str:
+    P = prefix  # relative path back to the site root ("" or "../")
     return f"""<!doctype html>
 <html lang="en">
 <head>
@@ -252,19 +271,26 @@ def page(title: str, description: str, canonical: str, body: str, kind: str = "i
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
   <link rel="canonical" href="{esc(canonical)}">
-  <link rel="icon" href="assets/favicon-32x32.png" type="image/png">
+  <link rel="icon" href="{P}assets/favicon-32x32.png" type="image/png">
+  <link rel="apple-touch-icon" href="{P}assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="manifest" href="{P}manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="X Digest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="X Digest">{extra_head}
   <meta property="og:type" content="website">
   <meta property="og:title" content="{esc(title)}">
   <meta property="og:description" content="{esc(description)}">
   <meta property="og:url" content="{esc(canonical)}">
-  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="assets/style.css?v={ASSET_VER}">
+  <link rel="preload" href="{P}assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="{P}assets/style.css?v={ASSET_VER}">
   {BOOT}
-  <script src="assets/digest.js?v={ASSET_VER}" defer></script>
+  <script src="{P}assets/digest.js?v={ASSET_VER}" defer></script>
 </head>
-<body class="page-{kind}">
+<body class="page-{kind}"{f' data-today="{today.slug}" data-latest="{P}latest.json" data-root="{P}"' if today else ""}>
   <a class="skip-link" href="#main">Skip to content</a>
-  <div class="toolbar"><a class="tool" href="{HOME_URL}">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="toolbar"><a class="tool" href="{P}today/"{' aria-current="page"' if today else ""}>Today</a><span class="tool-sep" aria-hidden="true">/</span><a class="tool" href="{HOME_URL}">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
   <div class="site-shell">
     <main id="main">
 {body}
@@ -309,7 +335,8 @@ def render_item(n: int, item: Item) -> str:
         </article>"""
 
 
-def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
+def render_day(day: Day, older: Day | None, newer: Day | None, prefix: str = "", today: bool = False) -> str:
+    P = prefix
     items = "\n".join(render_item(i, it) for i, it in enumerate(day.items, 1))
     has_zh = any(EXPLICIT_GLOSS_RE.search(it.headline + " ".join(it.quote)) or it.notes for it in day.items)
     toggle = ('<button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh '
@@ -321,16 +348,16 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
         if not d:
             return f'<span class="pager-{rel}"></span>'
         kicker = "← Previous day" if rel == "prev" else "Next day →"
-        return (f'<a class="pager-{rel}" rel="{rel}" href="{d.slug}.html"><span class="pager-kicker">{kicker}</span>'
+        return (f'<a class="pager-{rel}" rel="{rel}" href="{P}{d.slug}.html"><span class="pager-kicker">{kicker}</span>'
                 f'<span class="pager-title">{esc(d.date_long)}</span></a>')
 
     lede = render_summary(day.summary, "lede")
     mk = day.date.strftime("%Y-%m")
     body = f"""      <div class="row">
-      <div class="rail"><a class="month-label" href="./#m{mk}" title="All days in {mk}">{mk}</a></div>
+      <div class="rail"><a class="month-label" href="{P or './'}#m{mk}" title="All days in {mk}">{mk}</a></div>
       <article class="col post day-page">
         <header class="post-header">
-          <a class="back-link" href="./">← All days</a>
+          <a class="back-link" href="{P or './'}">← All days</a>
           <h1>{esc(day.date_long)}</h1>
           {lede}
           <div class="post-tools"><p class="entry-meta">{plural(len(day.items), "post")}</p>{toggle}</div>
@@ -345,7 +372,8 @@ def render_day(day: Day, older: Day | None, newer: Day | None) -> str:
       </article>
       </div>"""
     return page(f"{day.date_long} · {SITE_NAME}", "; ".join(day_summary(day)) + ".",
-                f"{SITE_URL}{day.slug}.html", body, kind="day")
+                (f"{SITE_URL}today/" if today else f"{SITE_URL}{day.slug}.html"), body, kind="day", prefix=P,
+                extra_head=NO_CACHE if today else "", today=day if today else None)
 
 
 def day_summary(day: Day) -> list[str]:
@@ -404,7 +432,7 @@ def main() -> None:
     for old in out.glob("*.html"):  # drop pages for days that no longer exist
         old.unlink()
     (out / "assets").mkdir(exist_ok=True)
-    for name in ("style.css", "digest.js", "favicon-32x32.png"):
+    for name in ("style.css", "digest.js", "favicon-32x32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"):
         shutil.copyfile(HERE / "src" / name, out / "assets" / name)
     shutil.copytree(HERE / "src" / "fonts", out / "assets" / "fonts", dirs_exist_ok=True)
     (out / ".nojekyll").write_text("")
@@ -415,6 +443,15 @@ def main() -> None:
         (out / f"{d.slug}.html").write_text(render_day(d, older, newer), encoding="utf-8")
         print(f"built {d.slug}.html  ({plural(len(d.items), 'post')})")
     (out / "index.html").write_text(render_index(list(reversed(days))), encoding="utf-8")
+    # permanent "latest day" URLs: /today/ (home-screen start_url) and /today.html, rendered in place
+    latest = days[-1]
+    older = days[-2] if len(days) > 1 else None
+    (out / "today").mkdir(exist_ok=True)
+    (out / "today" / "index.html").write_text(render_day(latest, older, None, prefix="../", today=True), encoding="utf-8")
+    (out / "today.html").write_text(render_day(latest, older, None, prefix="", today=True), encoding="utf-8")
+    (out / "latest.json").write_text(json.dumps({"date": latest.slug, "url": f"{latest.slug}.html"}) + "\n")
+    (out / "manifest.webmanifest").write_text(json.dumps(MANIFEST, ensure_ascii=False, indent=2) + "\n")
+    print(f"built today/ + today.html -> {latest.slug}")
     print(f"built index.html  ({plural(len(days), 'day')}) -> {out}")
 
 

@@ -47,4 +47,13 @@
     syncZh();
   });
   syncZh();
+
+  /* /today/: if a cached copy is behind, jump to the newest day */
+  const today = document.body.dataset.today;
+  if (today && window.fetch) {
+    fetch(document.body.dataset.latest + '?t=' + Date.now(), { cache: 'no-store' })
+      .then((r) => (r.ok ? r.json() : null))
+      .then((j) => { if (j && j.date && j.date > today) location.replace(document.body.dataset.root + j.url); })
+      .catch(() => {});
+  }
 })();
