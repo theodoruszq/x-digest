@@ -243,11 +243,11 @@ MANIFEST = {
     "name": "X Digest", "short_name": "X Digest",
     "description": "The day\u2019s most useful posts on X.",
     "start_url": "./today/", "scope": "./", "display": "standalone",
-    "background_color": "#ffffff", "theme_color": "#ffffff",
+    "background_color": "#000000", "theme_color": "#ffffff",
     "icons": [
-        {"src": "assets/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
-        {"src": "assets/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
-        {"src": "assets/apple-touch-icon.png", "sizes": "180x180", "type": "image/png"},
+        {"src": "assets/icon-192-v2.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable"},
+        {"src": "assets/icon-512-v2.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable"},
+        {"src": "assets/apple-touch-icon-v2.png", "sizes": "180x180", "type": "image/png"},
     ],
 }
 # cache-busting version for CSS/JS (GitHub Pages caches assets for ~10 min)
@@ -271,8 +271,9 @@ def page(title: str, description: str, canonical: str, body: str, kind: str = "i
   <title>{esc(title)}</title>
   <meta name="description" content="{esc(description)}">
   <link rel="canonical" href="{esc(canonical)}">
-  <link rel="icon" href="{P}assets/favicon-32x32.png" type="image/png">
-  <link rel="apple-touch-icon" href="{P}assets/apple-touch-icon.png" sizes="180x180">
+  <link rel="icon" href="{P}assets/favicon-32-v2.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="{P}assets/icon-v2.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="{P}assets/apple-touch-icon-v2.png" sizes="180x180">
   <link rel="manifest" href="{P}manifest.webmanifest">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="mobile-web-app-capable" content="yes">
@@ -432,7 +433,7 @@ def main() -> None:
     for old in out.glob("*.html"):  # drop pages for days that no longer exist
         old.unlink()
     (out / "assets").mkdir(exist_ok=True)
-    for name in ("style.css", "digest.js", "favicon-32x32.png", "apple-touch-icon.png", "icon-192.png", "icon-512.png"):
+    for name in ("style.css", "digest.js", "favicon-32-v2.png", "icon-v2.svg", "apple-touch-icon-v2.png", "icon-192-v2.png", "icon-512-v2.png"):
         shutil.copyfile(HERE / "src" / name, out / "assets" / name)
     shutil.copytree(HERE / "src" / "fonts", out / "assets" / "fonts", dirs_exist_ok=True)
     (out / ".nojekyll").write_text("")
