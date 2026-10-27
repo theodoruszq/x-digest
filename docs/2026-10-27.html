@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <title>Tuesday, October 27, 2026 · X Digest</title>
+  <meta name="description" content="Anthropic explains how Claude Code reviews AI-written code at scale; Cursor ships an Agent SDK; ex-GitHub CEO launches Entire; Rauch&#x27;s agents chat covertly through the CPU; Pocock splits risky PRs; Postiz &quot;leak&quot; drama doubles as marketing; GPT-6 Pro revisits GTA and crime; China&#x27;s AI stock bubble bursts; levelsio buys Google.">
+  <link rel="canonical" href="https://x-digest.theodoruszq.win/2026-10-27.html">
+  <link rel="icon" href="assets/favicon-32-v2.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/icon-v2.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon-v2.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="X Digest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="X Digest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Tuesday, October 27, 2026 · X Digest">
+  <meta property="og:description" content="Anthropic explains how Claude Code reviews AI-written code at scale; Cursor ships an Agent SDK; ex-GitHub CEO launches Entire; Rauch&#x27;s agents chat covertly through the CPU; Pocock splits risky PRs; Postiz &quot;leak&quot; drama doubles as marketing; GPT-6 Pro revisits GTA and crime; China&#x27;s AI stock bubble bursts; levelsio buys Google.">
+  <meta property="og:url" content="https://x-digest.theodoruszq.win/2026-10-27.html">
+  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css?v=7bebcf2c">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>
+  <script src="assets/digest.js?v=7bebcf2c" defer></script>
+</head>
+<body class="page-day">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toolbar"><a class="tool" href="today/">Today</a><span class="tool-sep" aria-hidden="true">/</span><a class="tool" href="https://theodoruszq.github.io/">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="site-shell">
+    <main id="main">
+      <div class="row">
+      <div class="rail"><a class="month-label" href="./#m2026-10" title="All days in 2026-10">2026-10</a></div>
+      <article class="col post day-page">
+        <header class="post-header">
+          <a class="back-link" href="./">← All days</a>
+          <h1>Tuesday, October 27, 2026</h1>
+          <ul class="summary-list lede"><li>Anthropic explains how Claude Code reviews AI-written code at scale</li><li>Cursor ships an Agent SDK; ex-GitHub CEO launches Entire</li><li>Rauch&#x27;s agents chat covertly through the CPU; Pocock splits risky PRs</li><li>Postiz &quot;leak&quot; drama doubles as marketing; GPT-6 Pro revisits GTA and crime</li><li>China&#x27;s AI stock bubble bursts; levelsio buys Google</li></ul>
+          <div class="post-tools"><p class="entry-meta">10 posts</p><button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh aria-label="Chinese glosses and notes" title="Chinese glosses &amp; notes"><span class="zh-switch-label" lang="zh-Hans" aria-hidden="true">中文</span><span class="zh-switch-track" aria-hidden="true"><span class="zh-switch-knob"></span></span></button></div>
+        </header>
+        <div class="items">
+        <article class="item" id="p1">
+          <div class="item-num" aria-hidden="true">1</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/addyosmani/status/2114604912520921136" rel="noopener">How the Claude Code team reviews code when Claude writes ~90% of it: merged PRs doubled, reverts fell 40%+</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/addyosmani">@addyosmani</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 9.9k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/addyosmani/status/2114604912520921136" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T06:27:53Z" title="2026-10-26 06:27 UTC">Oct 26, 06:27 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/addyosmani/status/2114604912520921136"><p>We previously mentioned that Claude writes about 90 percent of the code for Claude Code. So how do we do code review at this scale? …</p><p>Between June and September, we saw more than double the number of pull requests that were merged to the codebase for Claude Code, while the share of pull requests that had to be <span class="g">reverted</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 回滚（撤销已合并的改动）</span> fell by more than 40 percent.</p><p>We didn&#x27;t stop doing code review. Instead, we&#x27;ve automated the majority of reading and tuned it to optimize for human time and effort. We&#x27;ve also made significant investments into improving the speed and ease of reverting mistakes.</p><p>We view &quot;did someone read the code?&quot; as an <span class="g">imprecise</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 不精确的</span> measure of &quot;what could go wrong with this change, and what check - automated or human - is the right one to catch it?&quot; … It&#x27;s more like a spellcheck that you continuously do while w…</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Addy Osmani 发的 X 长文，讲 Claude Code 团队自己的做法，上面摘的是开头。据 X 新闻汇总，核心做法是：提 PR 之前先让自动测试和 AI 审查跑一遍，人工审查的力度按风险分级——文档类低风险改动可以不看，计费相关代码要两个人审。他们的主仓库每天合并的改动从 5 月约 2,500 个涨到 9 月 30,000 多个，人工逐行看已经不可能。</p>
+          </div>
+        </article>
+        <article class="item" id="p2">
+          <div class="item-num" aria-hidden="true">2</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/cursor_ai/status/2114793714531102901" rel="noopener">Cursor releases an Agent SDK: agents as code, prompts in Markdown, tools in TypeScript, evals built in</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/cursor_ai">@cursor_ai</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 2.8k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/cursor_ai/status/2114793714531102901" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T18:58:07Z" title="2026-10-26 18:58 UTC">Oct 26, 18:58 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/cursor_ai/status/2114793714531102901"><p>The Agent SDK is now available.</p><p>Define agents as code, with prompts in Markdown and tools in TypeScript. Deploy them on our hosted infrastructure, or run them on your own.</p><p>Built-in <span class="g">evals</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 评测（自动检查 agent 行为是否正确的测试）</span> let you measure every change and make your agents better over time.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 开发者 @trevin 在下面提醒一个坑（♥11）：agent 特别爱&quot;改掉旧的评测&quot;好让自己的新改动通过；Cursor 的文档里专门写了&quot;别为了让新改动通过而放宽旧评测，旧评测挂了说明你把以前能用的东西弄坏了&quot;。</p>
+          </div>
+        </article>
+        <article class="item" id="p3">
+          <div class="item-num" aria-hidden="true">3</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/ashtom/status/2114763996691562540" rel="noopener">Ex-GitHub CEO Thomas Dohmke launches Entire, a Git forge built for agents and humans working together</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/ashtom">@ashtom</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 426</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/ashtom/status/2114763996691562540" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T17:00:01Z" title="2026-10-26 17:00 UTC">Oct 26, 17:00 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/ashtom/status/2114763996691562540"><p>Agents reinvented how we produce code. It changed our tools and half of our workflow. It&#x27;s time for the other half to catch up.</p><p>Today, we&#x27;re shipping Entire: the <span class="g">Git forge</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 代码托管平台（像 GitHub 那样）</span> for agent-human collaboration. We&#x27;ve built @GoEntire using Entire.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 据 X 新闻汇总：Entire 用叫 &quot;Trails&quot; 的机制代替传统 PR，push 代码后由 agent 跑评测、给风险和质量打分；还会把 agent 的对话记录跟代码一起保存，方便别人接手时看到当时的上下文。种子轮 6,000 万美元。&quot;比 GitHub 快 89 倍&quot;&quot;省 71% token&quot;是官方说法，还没有独立验证。《The Pragmatic Engineer》作者 Gergely Orosz 说这是他两年来唯一投资的公司，&quot;GitHub 没法颠覆自己&quot;（♥331）。</p>
+          </div>
+        </article>
+        <article class="item" id="p4">
+          <div class="item-num" aria-hidden="true">4</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/rauchg/status/2114770919436808572" rel="noopener">Guillermo Rauch builds cpu-chat: sandboxed agents with no internet can still &quot;talk&quot; through shared CPU hardware</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/rauchg">@rauchg</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.6k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/rauchg/status/2114770919436808572" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T17:27:32Z" title="2026-10-26 17:27 UTC">Oct 26, 17:27 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/rauchg/status/2114770919436808572"><p>I built 𝚌𝚙𝚞-𝚌𝚑𝚊𝚝, a reproduction of @openai&#x27;s findings of <span class="g">covert</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 隐蔽的、暗中的</span> communication using the CPU.</p><p>It runs on a generic host with 2+ Firecracker microVMs with no internet access. … I was able to chat via 3 separate mechanisms: ① CPU <span class="g">contention</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 争用（多个程序抢同一资源）</span> ② Cache <span class="g">eviction</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 驱逐（缓存数据被挤出）</span> timing ③ DRAM bandwidth contention</p><p>Essentially, if shared hardware is involved, there&#x27;s a good chance your agents can communicate covertly. And with really decent <span class="g">latency</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 延迟</span>.</p><p>Noteworthy: ironically, OpenAI and Anthropic&#x27;s models refused to do this work. Open weight models got the job done.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Rauch 是 Vercel 的 CEO。意思是：两个被隔离、不能联网的虚拟机，可以靠&quot;故意让 CPU 变忙/变闲&quot;这类方式互相传信号，就像隔着墙敲摩斯码。他强调这不同于 Meltdown/Spectre 那种能偷数据的攻击，而且在 Vercel 的真实环境里很难做到、也容易被监测到（这是他自己的说法）。</p>
+          </div>
+        </article>
+        <article class="item" id="p5">
+          <div class="item-num" aria-hidden="true">5</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/mattpocockuk/status/2114749427889979405" rel="noopener">Matt Pocock&#x27;s prompt of the day: split a risky &quot;one-way door&quot; PR into a revertible part and a small final step</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/mattpocockuk">@mattpocockuk</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 678</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/mattpocockuk/status/2114749427889979405" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T16:02:08Z" title="2026-10-26 16:02 UTC">Oct 26, 16:02 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/mattpocockuk/status/2114749427889979405"><p>Prompt of the day:</p><p>Split this &quot;one-way door&quot; PR into two:</p><p>1. A PR that implements everything, except it can be easily reverted (a two-way door)</p><p>2. A followup PR (stacked on top) that actually goes through the one-way door</p><p>AKA expand/contract. Use feature flags as needed.</p><p>Lets you <span class="g">de-risk</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 降低风险</span> a huge PR by testing large chunks of it in production first.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> &quot;单向门&quot;指做了就很难撤回的决定（比如删数据库字段、改数据格式），&quot;双向门&quot;指随时能撤回的。先把能撤回的大部分代码上线验证，最后再用一个小 PR 跨过那道&quot;单向门&quot;。可以直接复制给 coding agent 用。</p>
+          </div>
+        </article>
+        <article class="item" id="p6">
+          <div class="item-num" aria-hidden="true">6</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/willbakerships/status/2114695113175867567" rel="noopener">Postiz &quot;leak&quot;: a fired marketer posts the source code, the founder says &quot;see you in court&quot;, but the code was already open source</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/willbakerships">@willbakerships</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 522</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/willbakerships/status/2114695113175867567" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T12:26:18Z" title="2026-10-26 12:26 UTC">Oct 26, 12:26 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/willbakerships/status/2114695113175867567"><p>i got fired by @wickedguro this morning</p><p>so i&#x27;m releasing the entire source code to the public</p><p>enjoy 👇</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Postiz 是独立开发者 Nevo David（@wickedguro）做的社交媒体定时发帖工具。他回帖说&quot;这人 App Store 的应用没了、收入掉到 0，我看他挺酷就雇了他……法庭见&quot;（♥549）。笑点在于 Postiz 本来就是开源的。旁观者 @0xHvdes 认为这更像一场营销活动，&quot;别的创业公司要花 4 万多美元才能买到这种关注&quot;；Nevo 早上还发帖&quot;欢迎大家做 Postiz 的替代品，越多人 @我 越能帮我推广&quot;。真假炒作没有定论。</p>
+          </div>
+        </article>
+        <article class="item" id="p7">
+          <div class="item-num" aria-hidden="true">7</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/emollick/status/2114822071016398918" rel="noopener">Ethan Mollick has GPT-6 Pro re-check the finding that violent video games reduce crime</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/emollick">@emollick</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 300</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/emollick/status/2114822071016398918" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T20:50:47Z" title="2026-10-26 20:50 UTC">Oct 26, 20:50 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/emollick/status/2114822071016398918"><p>I had GPT-6 Pro revisit the cool finding that violent video games reduce crime, as people stay home playing them. It downloaded fresh crime data &amp; extended prior work.</p><p>Yes, GTA V&#x27;s 2013 launch was linked with a dip in violence internationally. Other games are more ambiguous.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 一个好用法：让 AI 自己下载最新数据，去复核、延伸一篇已有研究，而不是只让它总结论文。结论是 AI 跑出来的分析，不等于经过同行评审的研究。</p>
+          </div>
+        </article>
+        <article class="item" id="p8">
+          <div class="item-num" aria-hidden="true">8</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/paulg/status/2114787151619485852" rel="noopener">Paul Graham: not reading or writing may become as common as smoking once was</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/paulg">@paulg</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 7.1k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/paulg/status/2114787151619485852" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T18:32:02Z" title="2026-10-26 18:32 UTC">Oct 26, 18:32 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/paulg/status/2114787151619485852"><p>We&#x27;re about to enter a period where not reading or writing becomes as <span class="g">ubiquitous</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 无处不在的</span> as smoking once was. We can hope people will eventually realize this is bad for them, as they did with smoking. But this is far from certain; the cost may not be as obvious.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> PG 是 YC 创始人。他的担心是：AI 能替人读、替人写之后，很多人干脆不再自己读写，而这种伤害不像吸烟那样明显。</p>
+          </div>
+        </article>
+        <article class="item" id="p9">
+          <div class="item-num" aria-hidden="true">9</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/Reuters/status/2114693603507294255" rel="noopener">Reuters: China&#x27;s AI stock bubble has already burst, wiping out about $480 billion</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/Reuters">@Reuters</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 2.0k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/Reuters/status/2114693603507294255" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T12:20:18Z" title="2026-10-26 12:20 UTC">Oct 26, 12:20 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/Reuters/status/2114693603507294255"><p>In China, the AI bubble has already burst</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 据 X 新闻汇总的路透报道：追踪中国头部 AI 和芯片公司的科创 50 指数从 7 月高点跌了约 40%，蒸发约 4,800 亿美元市值；沪深 300 较 6 月下跌 20%，进入熊市；宇树、沐曦、摩尔线程等个股腰斩甚至更多，但估值仍有约 100 倍市盈率。同一天 Kobeissi Letter 还指出，中国前 9 个月房地产投资同比下降 21%，是有记录以来同期最大降幅（♥1.8k）。</p>
+          </div>
+        </article>
+        <article class="item" id="p10">
+          <div class="item-num" aria-hidden="true">10</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/levelsio/status/2114792905973838057" rel="noopener">levelsio loads up on Google stock: &quot;my dad cancelled ChatGPT because it&#x27;s on Google now&quot;</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/levelsio">@levelsio</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.4k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/levelsio/status/2114792905973838057" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-26T18:54:54Z" title="2026-10-26 18:54 UTC">Oct 26, 18:54 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/levelsio/status/2114792905973838057"><p>Google is <span class="g">down bad</span><span class="g-zh zh-only" lang="zh-Hans">俚语：惨兮兮（这里指股价跌得很惨）</span> for no apparent reason. So today I have been loading up on $GOOG stock … for in my eyes very cheap</p><p>I just Facetime&#x27;d with my dad and we talked about ChatGPT and he answered &quot;yes I cancelled my ChatGPT because it&#x27;s on Google now&quot; … &quot;so Google Search has AI now and I trust it more because it links back to sources etc&quot;</p><p>My survival <span class="g">thesis</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 核心判断、投资逻辑</span> is we have to be co-owner of BigTech and BigAI while they become to sole owners of exponential intelligence which will replace a lot of our businesses and which they will then sell back to us</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> levelsio 是知名独立开发者（Photo AI、Nomad List）。他同天还说&quot;懂点经济学就知道只有大 AI 和大科技公司在赢，其他做软件的人都在逐底竞争&quot;（♥1.9k）。这是个人投资观点，不是建议；谷歌本周三发财报。</p>
+          </div>
+        </article>
+        </div>
+        <nav class="pager" aria-label="Day navigation">
+          <a class="pager-prev" rel="prev" href="2026-10-26.html"><span class="pager-kicker">← Previous day</span><span class="pager-title">Monday, October 26, 2026</span></a>
+          <span class="pager-next"></span>
+        </nav>
+      </article>
+      </div>
+      <div class="row">
+        <div class="rail"></div>
+        <footer class="col site-footer">
+          <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
