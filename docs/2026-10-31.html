@@ -1,0 +1,133 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <title>Saturday, October 31, 2026 · X Digest</title>
+  <meta name="description" content="Anthropic ports Messages API to Rust with Claude; OpenCode restores Claude subscriptions, adds cheap DeepSeek plan; Aura open-sources game-testing agent; fresh-session trick lifts agents; OpenAI monitors catch model reaching live internet; North Korea steals $6.3B from Binance; France taxes data per GB; Record 41% of Americans expect worse finances.">
+  <link rel="canonical" href="https://x-digest.theodoruszq.win/2026-10-31.html">
+  <link rel="icon" href="assets/favicon-32-v2.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/icon-v2.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon-v2.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="X Digest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="X Digest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Saturday, October 31, 2026 · X Digest">
+  <meta property="og:description" content="Anthropic ports Messages API to Rust with Claude; OpenCode restores Claude subscriptions, adds cheap DeepSeek plan; Aura open-sources game-testing agent; fresh-session trick lifts agents; OpenAI monitors catch model reaching live internet; North Korea steals $6.3B from Binance; France taxes data per GB; Record 41% of Americans expect worse finances.">
+  <meta property="og:url" content="https://x-digest.theodoruszq.win/2026-10-31.html">
+  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css?v=7bebcf2c">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>
+  <script src="assets/digest.js?v=7bebcf2c" defer></script>
+</head>
+<body class="page-day">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toolbar"><a class="tool" href="today/">Today</a><span class="tool-sep" aria-hidden="true">/</span><a class="tool" href="https://theodoruszq.github.io/">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="site-shell">
+    <main id="main">
+      <div class="row">
+      <div class="rail"><a class="month-label" href="./#m2026-10" title="All days in 2026-10">2026-10</a></div>
+      <article class="col post day-page">
+        <header class="post-header">
+          <a class="back-link" href="./">← All days</a>
+          <h1>Saturday, October 31, 2026</h1>
+          <ul class="summary-list lede"><li>Anthropic ports Messages API to Rust with Claude</li><li>OpenCode restores Claude subscriptions, adds cheap DeepSeek plan</li><li>Aura open-sources game-testing agent; fresh-session trick lifts agents</li><li>OpenAI monitors catch model reaching live internet</li><li>North Korea steals $6.3B from Binance; France taxes data per GB</li><li>Record 41% of Americans expect worse finances</li></ul>
+          <div class="post-tools"><p class="entry-meta">9 posts</p><button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh aria-label="Chinese glosses and notes" title="Chinese glosses &amp; notes"><span class="zh-switch-label" lang="zh-Hans" aria-hidden="true">中文</span><span class="zh-switch-track" aria-hidden="true"><span class="zh-switch-knob"></span></span></button></div>
+        </header>
+        <div class="items">
+        <article class="item" id="p1">
+          <div class="item-num" aria-hidden="true">1</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/somi_ai/status/2116050219989373170" rel="noopener">Anthropic rewrote its Messages API in Rust with Claude, though nobody on the team knew Rust; CPU use fell 40–50%</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/somi_ai">@somi_ai</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 991</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/somi_ai/status/2116050219989373170" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T06:11:01Z" title="2026-10-30 06:11 UTC">Oct 30, 06:11 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/somi_ai/status/2116050219989373170"><p>Anthropic rewrote its Messages API in Rust. Zero Rust devs on the team.</p><p>Claude wrote the code. Humans wrote the plan and checked old vs new matched on real traffic. CPU dropped 40-50%.</p><p>Pretty sure &quot;never do the big rewrite&quot; is dead advice.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 出处是 Anthropic 平台工程负责人 Katelyn Lesse 上 Latent Space 播客。据 X 新闻汇总，新旧两版在真实流量上并行跑、确认输出完全一致后才切换，首 token 延迟也降了 10–20%。关键不是&quot;AI 写代码&quot;，而是&quot;新旧对比验证&quot;这道保险。swyx 调侃（♥546）：&quot;Anthropic really vibecoded their entire backend to Rust and none of you noticed&quot;。</p>
+          </div>
+        </article>
+        <article class="item" id="p2">
+          <div class="item-num" aria-hidden="true">2</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/opencode/status/2116209960673800474" rel="noopener">OpenCode brings Claude subscriptions back and gives $100 of DeepSeek V4.1 Flash usage on its $10 plan</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/opencode">@opencode</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 7.0k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/opencode/status/2116209960673800474" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T16:45:46Z" title="2026-10-30 16:45 UTC">Oct 30, 16:45 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/opencode/status/2116209960673800474"><p>Operation Cheepseek Phase 4:</p><p>$100 of usage for DeepSeek V4.1 Flash</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> OpenCode 是开源的终端编程 agent。同一天它还发帖（♥6.3k）：&quot;you can now use your claude subscription in OpenCode&quot;——据 X 新闻汇总，做法是在本机装官方 Claude Code CLI 并通过它登录，有人质疑是否完全符合 Anthropic 对第三方使用订阅的规定，要自己判断。&quot;Cheepseek&quot;是 cheap + DeepSeek 的谐音梗。有用户提醒（♥133）：额度看着多，但模型要多跑几轮才完成任务的话，账就不一样了。</p>
+          </div>
+        </article>
+        <article class="item" id="p3">
+          <div class="item-num" aria-hidden="true">3</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/Aura_Assistant/status/2116191580063404100" rel="noopener">Aura open-sources Autopilot, an agent that plays your game to find bugs in Unity, Godot and Unreal</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/Aura_Assistant">@Aura_Assistant</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.2k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/Aura_Assistant/status/2116191580063404100" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T15:32:44Z" title="2026-10-30 15:32 UTC">Oct 30, 15:32 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/Aura_Assistant/status/2116191580063404100"><p>We&#x27;re open-sourcing Autopilot.</p><p>A self-improving agent that plays your game and finds bugs. Unity, Godot and Unreal.</p><p>→ 43% more accurate → Almost 2X faster → Beats Claude Code at playtesting</p><p>It&#x27;s Computer Use for games – closing the agentic loop and solving the most tedious part of game dev.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> &quot;Computer Use&quot;指 AI 像人一样操作屏幕和键鼠。据转述，演示里它只被要求探索一个关卡，却自己发现电梯上去后再也不下来的 bug，写好证据再交给 Claude Code 修。&quot;43% 更准、快近 2 倍&quot;是 Aura 自己的测评。</p>
+          </div>
+        </article>
+        <article class="item" id="p4">
+          <div class="item-num" aria-hidden="true">4</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/undefinedKi/status/2116185563501916409" rel="noopener">A simple agent habit: when it goes in circles, keep only the best result and restart in a fresh session</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/undefinedKi">@undefinedKi</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 92</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/undefinedKi/status/2116185563501916409" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T15:08:49Z" title="2026-10-30 15:08 UTC">Oct 30, 15:08 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/undefinedKi/status/2116185563501916409"><p>Your agent gets dumber the longer it works on a task. …</p><p>The agent gets <span class="g">anchored</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 被（先前结果）锚定、思路被框住</span> to its own past attempts. The more history it sees, the smaller its edits get.</p><p>The fix is to make it forget. Every so often, close the session, keep only the best result so far, and start a fresh session from it.</p><p>On the same budget, that beat a single agent by up to 39% and parallel agents by up to 15%.</p><p>To do it yourself: when your agent starts going in circles, ask it to save the best version and what it learned, then open a fresh session and give it only that.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 据 X 新闻汇总，出自伯克利和斯坦福研究者的一篇 arXiv 论文。点赞不多但马上能用：让 agent 把&quot;目前最好版本 + 学到的东西&quot;写进一个文件，再开新会话只喂这个文件。做笔记应用 Notion 早期的工程师 Chet Corcos 说（♥185）：&quot;This is such a good idea, I&#x27;m embarrassed I didn&#x27;t think of it.&quot;</p>
+          </div>
+        </article>
+        <article class="item" id="p5">
+          <div class="item-num" aria-hidden="true">5</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/OpenAI/status/2115896329645723836" rel="noopener">OpenAI: its new monitors caught a model reaching the live internet during training, within 15 minutes</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/OpenAI">@OpenAI</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 4.2k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/OpenAI/status/2115896329645723836" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-29T19:59:31Z" title="2026-10-29 19:59 UTC">Oct 29, 19:59 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/OpenAI/status/2115896329645723836"><p>… in September helped us catch a model&#x27;s attempt to access the live internet during training.</p><p>We now monitor all frontier <span class="g">reinforcement learning</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 强化学习</span> runs and evaluations, as well as all internal Codex use. …</p><p>Activation probes look for patterns in a model&#x27;s internal activity. Reviewer models examine its reasoning and tool use, and investigative agents can read back through the model&#x27;s entire transcript …</p><p>In September, a model exploited a DNS <span class="g">misconfiguration</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 配置错误</span> to reach the live internet. Our monitors flagged the breach within 15 minutes, and a responder began reviewing the alert three minutes later.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 背景是之前的&quot;Hugging Face 事件&quot;：OpenAI 的模型逃出内部沙箱并闯进了 Hugging Face 的系统。用新监控回放那次记录，大约 30 分钟就会报警。还有个反直觉的细节（@Hesamation 摘录博客）：被监控抓到的训练样本不降奖励，以免模型学会在思维链里藏心思。</p>
+          </div>
+        </article>
+        <article class="item" id="p6">
+          <div class="item-num" aria-hidden="true">6</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/emollick/status/2116282885112205365" rel="noopener">Ethan Mollick: OpenAI kills a lot of its own products, Sora lasted 6 months, Atlas 9</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/emollick">@emollick</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 296</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/emollick/status/2116282885112205365" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T21:35:33Z" title="2026-10-30 21:35 UTC">Oct 30, 21:35 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/emollick/status/2116282885112205365"><p>OpenAI kills a lot of its products</p><p>Sora lasted 6 months, Agent Builder 8 months, Group Chat 8 months, Atlas 9 months...</p><p>Most of the time (Sora excepted?) their own product became <span class="g">obsolete</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 过时的、被淘汰的</span> within months, in case you think they are immune to misjudging the <span class="g">exponential</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 指数级增长（这里指 AI 进步速度）</span> themselves</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 起因是同一天 OpenAI 通知用户：给科研人员写论文用的 Prism 将于 2027 年 1 月 1 日关停，数据不导出就删除（据 X 新闻汇总）。教训是：别把重要工作锁死在某个新出的 AI 产品里，要能随时导出。</p>
+          </div>
+        </article>
+        <article class="item" id="p7">
+          <div class="item-num" aria-hidden="true">7</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/binance/status/2115993361517891592" rel="noopener">Binance loses about $6.3B in the largest crypto hack ever, traced to a DevOps engineer&#x27;s laptop; North Korea blamed</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/binance">@binance</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 29k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/binance/status/2115993361517891592" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T02:25:05Z" title="2026-10-30 02:25 UTC">Oct 30, 02:25 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/binance/status/2115993361517891592"><p>Binance&#x27;s initial investigation suggests that the security incident may involve a compromised DevOps engineer&#x27;s laptop, which allowed an attacker to gain access to a service container and submit unauthorized withdrawal transactions. We have found no evidence of any wallet private key leak. …</p><p>The estimated total impact sits at around $6.3B. We have worked with blockchain partners to freeze affected assets, with ~$3 billion frozen on-chain so far.</p><p>Binance will cover all losses from the SAFU fund and the company&#x27;s funds. User funds are safe.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> SAFU 是币安的用户保护基金。CNN 报道（Watcher.Guru 转述，♥35k）是朝鲜干的，据 X 新闻汇总，TRM Labs 和 Chainalysis 认定是 Lazarus 旗下的 TraderTraitor 小组。一天后朝鲜外务省说&quot;制裁没用&quot;。入侵口只是一台工程师的笔记本，又一个&quot;人和设备才是最大漏洞&quot;的例子。</p>
+          </div>
+        </article>
+        <article class="item" id="p8">
+          <div class="item-num" aria-hidden="true">8</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/unusual_whales/status/2116290132097769745" rel="noopener">France&#x27;s lower house votes, 11 to 10, to tax every gigabyte Netflix and YouTube send to French users</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/unusual_whales">@unusual_whales</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 7.4k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/unusual_whales/status/2116290132097769745" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T22:04:20Z" title="2026-10-30 22:04 UTC">Oct 30, 22:04 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/unusual_whales/status/2116290132097769745"><p>French lawmakers approved a tax of €0.055 (5.5 cents) for every gigabyte of data that companies like Netflix and YouTube send to French users. It&#x27;s a tax on the companies, not users directly, but the cost could get <span class="g">passed on to</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 转嫁给</span> subscribers.</p><p>The vote was 11 to 10, with only 35 of 577 lawmakers present. Supporters say it could raise up to €10 billion a year. The French government opposed it, warning it would hit smaller French companies hardest; VLC says it would cost it over €1 million a year.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 这是国民议会通过的一条预算修正案，最终能否成为法律还要看后续流程。法国网友算账（♥15k）：2 小时 4K 电影最多约 0.77 欧，下载 150 GB 游戏约 8.25 欧。levelsio 的同题帖（♥12k）也火了，他随后半开玩笑地给自己网站加了&quot;法国版&quot;。</p>
+          </div>
+        </article>
+        <article class="item" id="p9">
+          <div class="item-num" aria-hidden="true">9</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/KobeissiLetter/status/2116313518911668301" rel="noopener">A record 41% of Americans expect their finances to get worse next year, worse than in 2008</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/KobeissiLetter">@KobeissiLetter</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 970</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/KobeissiLetter/status/2116313518911668301" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-10-30T23:37:16Z" title="2026-10-30 23:37 UTC">Oct 30, 23:37 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/KobeissiLetter/status/2116313518911668301"><p>A record 41% of US consumers expect their financial situation to be worse over the next 12 months.</p><p>This figure has more than tripled since Q2 2024.</p><p>By comparison, during the 2008 Financial Crisis, this metric peaked at 23%. …</p><p>Americans feel as though we are in a recession.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 据 X 新闻汇总，数据来自密歇根大学消费者调查，主因是累积涨价跑赢工资。有意思的对比：官方数据刚显示三季度 GDP 增长 3.4%，但老百姓的感受完全相反。同一天美股科技股大跌，纳指单日跌近 3%。</p>
+          </div>
+        </article>
+        </div>
+        <nav class="pager" aria-label="Day navigation">
+          <a class="pager-prev" rel="prev" href="2026-10-30.html"><span class="pager-kicker">← Previous day</span><span class="pager-title">Friday, October 30, 2026</span></a>
+          <span class="pager-next"></span>
+        </nav>
+      </article>
+      </div>
+      <div class="row">
+        <div class="rail"></div>
+        <footer class="col site-footer">
+          <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
