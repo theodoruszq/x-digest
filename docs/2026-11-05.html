@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <title>Thursday, November 5, 2026 · X Digest</title>
+  <meta name="description" content="Pocock argues agents need verifiable code, not readable code; Axiom ships 16M-line Lean formalization of Stacks Project; OpenAI says pipeline patched 948 Linux kernel bugs for $1.2M; Moonshot releases Kimi K3.1 Pro weights; DHH&#x27;s Omarchy 4.5 adds Apple M1–M3 support; Apple cuts engineers&#x27; daily AI spend limits; US oil falls below $90 after midterms.">
+  <link rel="canonical" href="https://x-digest.theodoruszq.win/2026-11-05.html">
+  <link rel="icon" href="assets/favicon-32-v2.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/icon-v2.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon-v2.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="X Digest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="X Digest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Thursday, November 5, 2026 · X Digest">
+  <meta property="og:description" content="Pocock argues agents need verifiable code, not readable code; Axiom ships 16M-line Lean formalization of Stacks Project; OpenAI says pipeline patched 948 Linux kernel bugs for $1.2M; Moonshot releases Kimi K3.1 Pro weights; DHH&#x27;s Omarchy 4.5 adds Apple M1–M3 support; Apple cuts engineers&#x27; daily AI spend limits; US oil falls below $90 after midterms.">
+  <meta property="og:url" content="https://x-digest.theodoruszq.win/2026-11-05.html">
+  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css?v=7bebcf2c">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>
+  <script src="assets/digest.js?v=7bebcf2c" defer></script>
+</head>
+<body class="page-day">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toolbar"><a class="tool" href="today/">Today</a><span class="tool-sep" aria-hidden="true">/</span><a class="tool" href="https://theodoruszq.github.io/">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="site-shell">
+    <main id="main">
+      <div class="row">
+      <div class="rail"><a class="month-label" href="./#m2026-11" title="All days in 2026-11">2026-11</a></div>
+      <article class="col post day-page">
+        <header class="post-header">
+          <a class="back-link" href="./">← All days</a>
+          <h1>Thursday, November 5, 2026</h1>
+          <ul class="summary-list lede"><li>Pocock argues agents need verifiable code, not readable code</li><li>Axiom ships 16M-line Lean formalization of Stacks Project</li><li>OpenAI says pipeline patched 948 Linux kernel bugs for $1.2M</li><li>Moonshot releases Kimi K3.1 Pro weights</li><li>DHH&#x27;s Omarchy 4.5 adds Apple M1–M3 support</li><li>Apple cuts engineers&#x27; daily AI spend limits</li><li>US oil falls below $90 after midterms</li></ul>
+          <div class="post-tools"><p class="entry-meta">10 posts</p><button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh aria-label="Chinese glosses and notes" title="Chinese glosses &amp; notes"><span class="zh-switch-label" lang="zh-Hans" aria-hidden="true">中文</span><span class="zh-switch-track" aria-hidden="true"><span class="zh-switch-knob"></span></span></button></div>
+        </header>
+        <div class="items">
+        <article class="item" id="p1">
+          <div class="item-num" aria-hidden="true">1</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/mattpocockuk/status/2117953152376799498" rel="noopener">Matt Pocock: for coding agents, &quot;readability&quot; really means &quot;verifiability&quot;, so design modules that can be tested on their own</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/mattpocockuk">@mattpocockuk</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.9k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/mattpocockuk/status/2117953152376799498" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T12:12:35Z" title="2026-11-04 12:12 UTC">Nov 4, 12:12 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/mattpocockuk/status/2117953152376799498"><p>We need to reconsider our <span class="g">priors</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 先入为主的看法（这里指对&quot;代码可读性&quot;的既有观念）</span> on code readability.</p><p>Humans, compared to agents, are pretty slow at understanding large quantities of text. … So &#x27;readability&#x27; to agents really means &#x27;verifiability&#x27;. How easy it is to <span class="g">mess about with</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 随手摆弄、试着跑一跑</span> that code to see it working.</p><p>The takeaways: … Instead, think about how easy it is to verify. Design your codebase so modules can be tested and verified independently. Feel free to sacrifice a bit of readability for performance. <span class="g">Cyclomatic complexity</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 圈复杂度：衡量代码分支多少的指标</span> and function size don&#x27;t matter to agents</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 观点很干脆：给 agent 用的代码库，重点是&quot;能不能快速验证&quot;（测试覆盖、模块能独立跑），而不是人读起来舒不舒服。这是他的经验判断，不是实验数据；他也承认人偶尔要能读懂代码。</p>
+          </div>
+        </article>
+        <article class="item" id="p2">
+          <div class="item-num" aria-hidden="true">2</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/mattpocockuk/status/2117947025354539286" rel="noopener">Matt Pocock: his skills repo is 15 stars short of being the most-starred &quot;skills&quot; repo, and he jokes about the 13th most-starred repo ever</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/mattpocockuk">@mattpocockuk</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 2.1k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/mattpocockuk/status/2117947025354539286" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T11:48:15Z" title="2026-11-04 11:48 UTC">Nov 4, 11:48 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/mattpocockuk/status/2117947025354539286"><p>15 stars until we become the most-starred skills repo in the world...</p><p>...and the 13th most starred repo of all time.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 链接指向 github.com/mattpocock/skills，是他从自己 .agents 目录里整理出来的一套 agent skills（给编码 agent 用的可复用指令）。&quot;第 13 名&quot;是他的说法，我没核对实际星数；值得看的是它现在这么热门。</p>
+          </div>
+        </article>
+        <article class="item" id="p3">
+          <div class="item-num" aria-hidden="true">3</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/thdxr/status/2118059907949690955" rel="noopener">dax: his team is trying all subagents on DeepSeek Flash this week, with Opus 5.5 only on the main agent</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/thdxr">@thdxr</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 2.2k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/thdxr/status/2118059907949690955" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T19:16:48Z" title="2026-11-04 19:16 UTC">Nov 4, 19:16 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/thdxr/status/2118059907949690955"><p>the team is experimenting this week at switching all our <span class="g">subagents</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 子 agent：主 agent 派出去干具体小活的 agent</span> to deepseek flash and using opus 5.5 only on the primary subagent</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 这是最近很多团队的省钱思路：贵的模型只管决策，便宜的模型干大量杂活。他说的是&quot;本周试验&quot;，没给效果数据。</p>
+          </div>
+        </article>
+        <article class="item" id="p4">
+          <div class="item-num" aria-hidden="true">4</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/axiommathai/status/2118028834515874112" rel="noopener">Axiom releases a 16M-line Lean formalization of the whole Stacks Project, pitched as a counterexample to &quot;vibe coding at scale is slop&quot;</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/axiommathai">@axiommathai</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 3.5k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/axiommathai/status/2118028834515874112" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T17:13:19Z" title="2026-11-04 17:13 UTC">Nov 4, 17:13 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/axiommathai/status/2118028834515874112"><p>Most think vibecoding at scale is slop. Here&#x27;s a counterexample.</p><p>Today we release a 16M-line <span class="g">formalization</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 形式化：把数学内容写成能被计算机逐步检验的代码</span> of the entire Stacks Project, critical <span class="g">infra</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> infrastructure 的缩写，基础设施</span> underlying modern math, with optimized code quality and its highly interconnected structure preserved.</p><p>A mathematical city 🌆</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Stacks Project 是代数几何的开放参考书；Lean 是一种能让计算机检查证明的语言，所以&quot;每条证明都被机器验证过&quot;。16M 行、AI 做了大部分工作是 Axiom 自己的说法，我没有逐项核对，也没看他们附的 4 分钟视频。</p>
+          </div>
+        </article>
+        <article class="item" id="p5">
+          <div class="item-num" aria-hidden="true">5</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/dhh/status/2117992511407014110" rel="noopener">DHH: Omarchy 4.5 will run on Apple M1, M2, M3 Macs, with M4–M6 on the way</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/dhh">@dhh</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 7.3k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/dhh/status/2117992511407014110" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T14:48:59Z" title="2026-11-04 14:48 UTC">Nov 4, 14:48 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/dhh/status/2117992511407014110"><p>Omarchy 4.5 will ship with full compatibility for M1, M2, M3, and Neo! Incredible achievement from the Omarchy M team. The installer makes this so smooth, the <span class="g">dual boot</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 双系统：同一台电脑装两个系统，开机时选择</span> makes it a no brainer. Apple hardware <span class="g">liberated</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 被&quot;解放&quot;的（这里指苹果电脑可以不用 macOS）</span>. M4-6 on the way. WE CAN FIX EVERYTHING!</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Omarchy 是 DHH 做的开源 Linux 桌面配置，这次让它能在苹果自家芯片的 Mac 上双系统启动。同一天他还发了&quot;大版本发布&quot;的帖子（点赞约 7.3k）。&quot;M4-6 on the way&quot;只是预告。</p>
+          </div>
+        </article>
+        <article class="item" id="p6">
+          <div class="item-num" aria-hidden="true">6</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/Kimi_Moonshot/status/2118010528123773297" rel="noopener">Moonshot releases the weights of Kimi K3.1 Pro, a 2.8T-parameter open-weight model</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/Kimi_Moonshot">@Kimi_Moonshot</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 6.3k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/Kimi_Moonshot/status/2118010528123773297" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T16:00:35Z" title="2026-11-04 16:00 UTC">Nov 4, 16:00 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/Kimi_Moonshot/status/2118010528123773297"><p>Releasing the model weights of Kimi K3.1 Pro: https://huggingface.co/moonshotai/Kimi-K3.1-Pro</p><p>We&#x27;ll keep advancing open intelligence.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 官方帖子只有这两句，参数规模（2.8T）、1M 上下文和许可证细节来自帖子里的 Hugging Face 页面标题和其他账号的转述，我没有逐条核对。这是今天开放权重模型里最受关注的一条。</p>
+          </div>
+        </article>
+        <article class="item" id="p7">
+          <div class="item-num" aria-hidden="true">7</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/OpenAI/status/2118119451401048497" rel="noopener">OpenAI says an autonomous pipeline validated and generated patches for 948 Linux kernel privilege-escalation bugs in one run, at $1.2M API cost</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/OpenAI">@OpenAI</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 4.1k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/OpenAI/status/2118119451401048497" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T23:13:24Z" title="2026-11-04 23:13 UTC">Nov 4, 23:13 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/OpenAI/status/2118119451401048497"><p>Our security researchers built an autonomous cyber vulnerability discovery, exploitation, and patching pipeline.</p><p>In a single run with an upcoming cyber model, it validated and generated patches for 948 local <span class="g">privilege escalation</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 提权：普通用户拿到管理员（root）权限的漏洞</span> vulnerabilities in the Linux kernel at a total API cost of $1.2 million.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 平均每个漏洞约 1,270 美元。&quot;upcoming cyber model&quot;指还没发布的模型；结果是 OpenAI 自己报的，我没看他们的完整报告，补丁据说还要人工审核后才交给内核维护者。</p>
+          </div>
+        </article>
+        <article class="item" id="p8">
+          <div class="item-num" aria-hidden="true">8</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/markgurman/status/2118068667103453360" rel="noopener">Mark Gurman: Apple cuts employee AI budgets, engineers&#x27; daily limits down from $300 to $200, with $100 planned</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/markgurman">@markgurman</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 2.4k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/markgurman/status/2118068667103453360" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T19:51:36Z" title="2026-11-04 19:51 UTC">Nov 4, 19:51 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/markgurman/status/2118068667103453360"><p>NEW: Apple is cutting employee AI spending budgets even as it pushes workers to use the technology more. Engineers have seen daily limits cut from $300 to $200, with further reductions to $100 planned. Other teams could see limits fall to $25.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Gurman 是长期报道苹果的记者，信息来自彭博文章，我没有打开原文。对用 AI 编码的人来说，这说明&quot;按人头给无限额度&quot;的做法在大公司也开始收紧。</p>
+          </div>
+        </article>
+        <article class="item" id="p9">
+          <div class="item-num" aria-hidden="true">9</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/KobeissiLetter/status/2118021364951167452" rel="noopener">Kobeissi Letter: US oil falls below $90 a barrel after JD Vance blames the Iran war for the Republican midterm losses</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/KobeissiLetter">@KobeissiLetter</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 5.1k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/KobeissiLetter/status/2118021364951167452" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-04T16:43:38Z" title="2026-11-04 16:43 UTC">Nov 4, 16:43 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/KobeissiLetter/status/2118021364951167452"><p>BREAKING: US oil prices <span class="g">collapse</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 暴跌</span> below $90/barrel after Vice President JD Vance blames the Iran War for the Republicans&#x27; election loss.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 背景：另一条同账号的帖子说选后四天油价已跌约 12%，市场在押&quot;伊朗局势缓和&quot;。这条把油价下跌和 Vance 的表态联系起来，是账号的解读，不是因果证明。</p>
+          </div>
+        </article>
+        <article class="item" id="p10">
+          <div class="item-num" aria-hidden="true">10</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/KobeissiLetter/status/2118147600847118353" rel="noopener">Kobeissi Letter: US prices are up 31.3% since April 2020, but average hourly earnings only 25.9%</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/KobeissiLetter">@KobeissiLetter</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 665</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/KobeissiLetter/status/2118147600847118353" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-05T01:05:15Z" title="2026-11-05 01:05 UTC">Nov 5, 01:05 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/KobeissiLetter/status/2118147600847118353"><p>Inflation has more than wiped out all US consumer wage gains since the 2020 Pandemic: US consumer prices have risen +31.3% since April 2020, to an all-time high in September. Over the same period, average hourly earnings have increased just +25.9%.</p><p>This comes as CPI inflation has now been above the Fed&#x27;s 2% target for 67 consecutive months, the 3rd-longest streak over the last 100 years.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> CPI 是消费者价格指数。数据由账号引用，我没核对 BLS 原始数据；&quot;第三长&quot;也是它的说法。</p>
+          </div>
+        </article>
+        </div>
+        <nav class="pager" aria-label="Day navigation">
+          <a class="pager-prev" rel="prev" href="2026-11-04.html"><span class="pager-kicker">← Previous day</span><span class="pager-title">Wednesday, November 4, 2026</span></a>
+          <span class="pager-next"></span>
+        </nav>
+      </article>
+      </div>
+      <div class="row">
+        <div class="rail"></div>
+        <footer class="col site-footer">
+          <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
