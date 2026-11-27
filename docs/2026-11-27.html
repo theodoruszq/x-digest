@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light dark">
+  <meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#141414" media="(prefers-color-scheme: dark)">
+  <title>Friday, November 27, 2026 · X Digest</title>
+  <meta name="description" content="Anthropic moves Messages API to Rust with Claude agents; OpenAI fixes GPT-6.2 billing, tightens usage limits; Cloudflare adds one-toggle site search for agents; Devs one-shot React apps over to Effect UI; Stanford team swaps facts between LLMs with one rotation; Retail piles into leveraged chip ETFs as dollar surges.">
+  <link rel="canonical" href="https://x-digest.theodoruszq.win/2026-11-27.html">
+  <link rel="icon" href="assets/favicon-32-v2.png" type="image/png" sizes="32x32">
+  <link rel="icon" href="assets/icon-v2.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="assets/apple-touch-icon-v2.png" sizes="180x180">
+  <link rel="manifest" href="manifest.webmanifest">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="X Digest">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <meta name="application-name" content="X Digest">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Friday, November 27, 2026 · X Digest">
+  <meta property="og:description" content="Anthropic moves Messages API to Rust with Claude agents; OpenAI fixes GPT-6.2 billing, tightens usage limits; Cloudflare adds one-toggle site search for agents; Devs one-shot React apps over to Effect UI; Stanford team swaps facts between LLMs with one rotation; Retail piles into leveraged chip ETFs as dollar surges.">
+  <meta property="og:url" content="https://x-digest.theodoruszq.win/2026-11-27.html">
+  <link rel="preload" href="assets/fonts/lato-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/style.css?v=7bebcf2c">
+  <script>(function(){var d=document.documentElement;d.classList.add('js');try{var t=localStorage.getItem('xdigest.theme');if(t)d.dataset.theme=t;if(localStorage.getItem('xdigest.zh')==='1')d.classList.add('show-zh');}catch(e){}})();</script>
+  <script src="assets/digest.js?v=7bebcf2c" defer></script>
+</head>
+<body class="page-day">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div class="toolbar"><a class="tool" href="today/">Today</a><span class="tool-sep" aria-hidden="true">/</span><a class="tool" href="https://theodoruszq.github.io/">About</a><span class="tool-sep" aria-hidden="true">/</span><button type="button" class="tool" data-toggle-theme><span data-theme-label>Dark</span></button></div>
+  <div class="site-shell">
+    <main id="main">
+      <div class="row">
+      <div class="rail"><a class="month-label" href="./#m2026-11" title="All days in 2026-11">2026-11</a></div>
+      <article class="col post day-page">
+        <header class="post-header">
+          <a class="back-link" href="./">← All days</a>
+          <h1>Friday, November 27, 2026</h1>
+          <ul class="summary-list lede"><li>Anthropic moves Messages API to Rust with Claude agents</li><li>OpenAI fixes GPT-6.2 billing, tightens usage limits</li><li>Cloudflare adds one-toggle site search for agents</li><li>Devs one-shot React apps over to Effect UI</li><li>Stanford team swaps facts between LLMs with one rotation</li><li>Retail piles into leveraged chip ETFs as dollar surges</li></ul>
+          <div class="post-tools"><p class="entry-meta">10 posts</p><button type="button" class="zh-switch" role="switch" aria-checked="false" data-toggle-zh aria-label="Chinese glosses and notes" title="Chinese glosses &amp; notes"><span class="zh-switch-label" lang="zh-Hans" aria-hidden="true">中文</span><span class="zh-switch-track" aria-hidden="true"><span class="zh-switch-knob"></span></span></button></div>
+        </header>
+        <div class="items">
+        <article class="item" id="p1">
+          <div class="item-num" aria-hidden="true">1</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/AnthropicAI/status/2125627317263466739" rel="noopener">Anthropic rewrote its Messages API from Python to Rust — and used the live Python service to verify Claude agents&#x27; work</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/AnthropicAI">@AnthropicAI</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 14k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/AnthropicAI/status/2125627317263466739" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-25T16:26:59Z" title="2026-11-25 16:26 UTC">Nov 25, 16:26 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/AnthropicAI/status/2125627317263466739"><p>We recently <span class="g">migrated</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 迁移（把系统换到新技术上）</span> our Messages API from Python to Rust.</p><p>On our engineering blog, we share how we used the existing service to verify the new one, with teams of Claude agents tracking down and fixing differences between the two versions.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 博客要点：Claude 大约一周写出核心请求路径的第一版；难的是“怎么确认没改坏”。他们把线上 Python 版本当作“标准答案”，用真实流量对比两个版本的输出，发现差异就自动派 agent 去修。结果：每个请求 CPU 用量降约 70%，首个 token 的中位延迟降约 20%，全程不停服（[博客](https://www.anthropic.com/research/migrating-api-to-rust)）。核心思路 “generator–verifier gap（生成容易、验证难）” 对任何用 AI 重写老系统的人都值得借鉴。</p>
+          </div>
+        </article>
+        <article class="item" id="p2">
+          <div class="item-num" aria-hidden="true">2</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/thsottiaux/status/2125784147889393806" rel="noopener">OpenAI admits a GPT-6.2 billing mistake: Astra users will now hit limits 40% faster, Sol 25%</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/thsottiaux">@thsottiaux</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 18k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/thsottiaux/status/2125784147889393806" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T02:50:10Z" title="2026-11-26 02:50 UTC">Nov 26, 02:50 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/thsottiaux/status/2125784147889393806"><p>We made a billing mistake at launch of GPT-6.2 that incorrectly discounted GPT-6.2 Astra and Sol usage for most users.</p><p>We&#x27;ve fixed this now, so the same work will use more of your plan&#x27;s usage <span class="g">allowance</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 额度</span>. Comparing to last week, you will reach your limits 40% faster on GPT-6.2 Astra and 25% faster on Sol. You should still see these go further in usage compared to 6 Astra and 6.1 Sol … we won&#x27;t charge you for the difference on past usage.</p><p>As a small <span class="g">token</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 表示（心意）的小东西</span> to apologize for the mistake, we&#x27;ll be adding one <span class="g">banked reset</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 一次可存着用的额度重置</span> for everyone on Go, Plus, Pro, and Business.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Tibo 负责 Codex 和 ChatGPT。用 Codex 的人上周觉得“额度很耐用”，其实是计费 bug。评论区不少人吐槽，比如 “So the best part about GPT-6.2 was a bug”（[链接](https://x.com/lyraxana/status/2125973537618047392)）。</p>
+          </div>
+        </article>
+        <article class="item" id="p3">
+          <div class="item-num" aria-hidden="true">3</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/d4m1n/status/2125959630484562165" rel="noopener">Cloudflare tip: one toggle lets AI agents search your site and get clean markdown back — even on the free plan</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/d4m1n">@d4m1n</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.7k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/d4m1n/status/2125959630484562165" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T14:27:28Z" title="2026-11-26 14:27 UTC">Nov 26, 14:27 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/d4m1n/status/2125959630484562165"><p>If your site&#x27;s on Cloudflare, go flip this on now! 👀</p><p>It&#x27;s one toggle so AI agents can search your site directly instead of <span class="g">scraping</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 抓取（逐页爬取网页内容）</span> it page by page.</p><p>They get your actual content back as md.</p><p>seems to be available on the free plan!</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Cloudflare 官方公告：[链接](https://x.com/Cloudflare/status/2125591595965702452)（♥ 3.3k）。据 X 新闻摘要，功能叫 Search for Agents（beta），开启后在 /.well-known/search 提供搜索接口，并沿用你现有的 bot 规则和防火墙设置。有个人博客/文档站的话可以试试。</p>
+          </div>
+        </article>
+        <article class="item" id="p4">
+          <div class="item-num" aria-hidden="true">4</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/dillon_mulroy/status/2125993366089273373" rel="noopener">Dev migrates all his personal and client apps from React to the new Effect UI — Opus 5.5 &quot;one-shotted it&quot;</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/dillon_mulroy">@dillon_mulroy</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.8k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/dillon_mulroy/status/2125993366089273373" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T16:41:32Z" title="2026-11-26 16:41 UTC">Nov 26, 16:41 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/dillon_mulroy/status/2125993366089273373"><p>update: migrated all of my personal and freelance client apps to effect ui from react</p><p>opus 5.5 one shotted it with ease</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> Effect UI 是 Effect 团队的新前端框架，主打“状态全部写明白”，对人和 agent 都更友好。核心贡献者 Maxwell Brown：“React is a terrible framework for both humans and agents for the same reason - there&#x27;s way too many [[implicit constraints|n. 隐含约束（没写出来的规则）]]”（[链接](https://x.com/maxwellbrown/status/2125921405988708749)）。“一次迁移成功”是作者自述。</p>
+          </div>
+        </article>
+        <article class="item" id="p5">
+          <div class="item-num" aria-hidden="true">5</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/mvanhorn/status/2125974014032323047" rel="noopener">Matt Van Horn tested 16 agent browser and computer-use tools on one Mac — the winners are almost unknown on GitHub</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/mvanhorn">@mvanhorn</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 434</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/mvanhorn/status/2125974014032323047" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T15:24:38Z" title="2026-11-26 15:24 UTC">Nov 26, 15:24 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/mvanhorn/status/2125974014032323047"><p>I tested 16 agent browser and computer-use tools on one Apple Silicon Mac so my agents in @t3dotcodes stop handing work back to me.</p><p>The two browser winners are almost unknown on GitHub (3k stars for @ardiabrowser, 1.1k for @opencode browse), yet they beat 54k-star agent-browser and 26k-star Stagehand on speed, RAM, and tokens.</p><p>🏆 Switch browsers (what I did): @ardiabrowser + @trycua. Fastest warm loads (396 ms), zero Chrome 144 Allow popups … built-in <span class="g">prompt-injection fences</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 防提示词注入的隔离措施</span>, and full 1Password + Touch ID Passkeys</p><p>🌐 Stay in Chrome: @opencode browse … + @trycua. Pairs once over a Chrome extension so you turn remote debugging off forever, uses 18 MB RAM, and cuts page snapshots 53x vs Stagehand</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 想让 agent 帮你操作浏览器和 Mac 应用的人可以直接抄作业。数字都是作者在自己机器上的测试结果。</p>
+          </div>
+        </article>
+        <article class="item" id="p6">
+          <div class="item-num" aria-hidden="true">6</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/viviencheng__/status/2125631050319831474" rel="noopener">Stanford&#x27;s &quot;Plato&#x27;s Key&quot;: one simple rotation lets one LLM use another LLM&#x27;s internal representations — no training</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/viviencheng__">@viviencheng__</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 6.0k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/viviencheng__/status/2125631050319831474" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-25T16:41:49Z" title="2026-11-25 16:41 UTC">Nov 25, 16:41 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/viviencheng__/status/2125631050319831474"><p>🗝️ Introducing Plato&#x27;s Key. A single rotation lets independently trained LLMs use each other&#x27;s <span class="g">representations</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> （模型内部的）表征</span> as their own. No <span class="g">gradients</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 梯度（这里指不需要再训练）</span> required ✨</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> [博客](https://hazyresearch.stanford.edu/blog/2026-11-25-platos-key)里的例子：问模型 A “德国的首都是”，把模型 B 在“France”处的内部状态旋转一下替换进去，A 就回答 “Paris”。在 8 个家族、12 个模型上，中位迁移准确率 41%；还能“唤醒”模型存着但答不出来的知识。支持“不同模型最终学到相似世界结构”的假说。</p>
+          </div>
+        </article>
+        <article class="item" id="p7">
+          <div class="item-num" aria-hidden="true">7</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/levelsio/status/2125899647336272276" rel="noopener">levelsio: many founders must now admit their business &quot;simply doesn&#x27;t have a reason to exist anymore&quot;</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/levelsio">@levelsio</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.7k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/levelsio/status/2125899647336272276" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T10:29:07Z" title="2026-11-26 10:29 UTC">Nov 26, 10:29 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/levelsio/status/2125899647336272276"><p>A lot of business owners, founders and CEOs now need to have the difficult conversation with themselves that their business simply doesn&#x27;t have a reason to exist anymore in this new era</p><p>I remember Replit for example was just an online IDE … then in 2024 @amasad hard <span class="g">pivoted</span><span class="g-zh zh-only" lang="zh-Hans"><i>v.</i> 彻底转型</span> it to be an AI app and site generator target to the opposite audience: non-coders, which caused lots of <span class="g">backlash</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 强烈反对</span>, but that worked</p><p>what worked last year might not work this year anymore, and what works this year might not work next year anymore, because we&#x27;re dealing with AI models that get <span class="g">exponentially</span><span class="g-zh zh-only" lang="zh-Hans"><i>adv.</i> 指数级地</span> better every year</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 起因是讨论 Zapier 会不会被 AI 取代。swyx 也说老牌 SaaS 创始人“重新创业”的越来越多（[链接](https://x.com/swyx/status/2125969097276178943)）；Gergely Orosz：赚钱的十亿美元公司也受到威胁（[链接](https://x.com/GergelyOrosz/status/2125996533384724981)）。</p>
+          </div>
+        </article>
+        <article class="item" id="p8">
+          <div class="item-num" aria-hidden="true">8</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/adamwathan/status/2125974928327369009" rel="noopener">Tailwind creator Adam Wathan: &quot;I still haven&#x27;t figured out how to use AI to meaningfully accelerate design work&quot;</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/adamwathan">@adamwathan</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.3k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/adamwathan/status/2125974928327369009" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T15:28:16Z" title="2026-11-26 15:28 UTC">Nov 26, 15:28 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/adamwathan/status/2125974928327369009"><p>I can&#x27;t express how <span class="g">incompetent</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 无能的</span> it makes me feel that I still haven&#x27;t figured out how to use AI to meaningfully accelerate design work. I feel like I spend the same amount of time on every decision as I did in 2021.</p><p>Makes me feel like I&#x27;m too old for this shit.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 难得的反方向声音：AI 写代码突飞猛进，但设计决策（好不好看、对不对）仍然很难加速。很多设计师在评论区表示同感。</p>
+          </div>
+        </article>
+        <article class="item" id="p9">
+          <div class="item-num" aria-hidden="true">9</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/KobeissiLetter/status/2126007068456854006" rel="noopener">Retail investors buy the chip dip with 3x leverage: SOXL pulls in $1.9B in a week</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/KobeissiLetter">@KobeissiLetter</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 1.2k</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/KobeissiLetter/status/2126007068456854006" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T17:35:59Z" title="2026-11-26 17:35 UTC">Nov 26, 17:35 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/KobeissiLetter/status/2126007068456854006"><p>The 3x <span class="g">leveraged</span><span class="g-zh zh-only" lang="zh-Hans"><i>adj.</i> 带杠杆的</span> long semiconductor ETF, SOXL, has attracted +$1.9 billion in <span class="g">inflows</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 资金流入</span> so far this week.</p><p>On Monday alone, the fund recorded +$1.7 billion in inflows, its largest daily intake since November 6th.</p><p>Meanwhile, over the 20 trading days ended Friday, retail net purchases of SOXL rose to +$1.3 billion, the largest 20-day <span class="g">rolling sum</span><span class="g-zh zh-only" lang="zh-Hans"><i>n.</i> 滚动合计</span> since at least December 2024.</p><p>Investors are buying the dip in chip stocks on leverage.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 3 倍杠杆 ETF：芯片指数一天跌 10%，它就跌约 30%；来回震荡时还会因每日再平衡产生额外损耗。背景：这周 AI 股抛售蔓延、韩国股市暴跌（本站 11-26 报道过）。</p>
+          </div>
+        </article>
+        <article class="item" id="p10">
+          <div class="item-num" aria-hidden="true">10</div>
+          <div class="item-body">
+            <h2 class="item-title"><a href="https://x.com/KobeissiLetter/status/2126050442513961064" rel="noopener">The US dollar&#x27;s strongest rally in years: DXY up 7% in nine months</a></h2>
+            <p class="item-meta"><a class="handle" href="https://x.com/KobeissiLetter">@KobeissiLetter</a><span class="dot" aria-hidden="true">·</span><span class="likes"><span class="heart" aria-hidden="true">♥</span><span class="sr-only">Likes:</span> 909</span><span class="dot" aria-hidden="true">·</span><a class="orig" href="https://x.com/KobeissiLetter/status/2126050442513961064" rel="noopener">Original<svg class="ext" viewBox="0 0 12 12" width="11" height="11" aria-hidden="true" focusable="false"><path d="M5 2.25H3.5A1.75 1.75 0 0 0 1.75 4v4.5c0 .97.78 1.75 1.75 1.75H8A1.75 1.75 0 0 0 9.75 8.5V7" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/><path d="M7 1.75h3.25V5M10.1 1.9 5.75 6.25" fill="none" stroke="currentColor" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round"/></svg></a><span class="dot" aria-hidden="true">·</span><time class="ts" datetime="2026-11-26T20:28:20Z" title="2026-11-26 20:28 UTC">Nov 26, 20:28 UTC</time></p>
+            <blockquote class="quote" cite="https://x.com/KobeissiLetter/status/2126050442513961064"><p>The US Dollar Index has surged +7.0% over the last 9 months, its strongest 9-month rolling performance since November 2022.</p><p>Since its January 2026 low, the US Dollar Index is up +8.8%, to its highest level since April 2024.</p><p>Meanwhile, the EUR/USD is down -9.1% since its January high, to 1.1 …</p><p>This comes as rising Fed rate hike expectations, strong US economic data, and record foreign demand for US stocks are all driving the currency higher.</p></blockquote><p class="note zh-only" lang="zh-Hans"><span aria-hidden="true">💡</span> 美元走强意味着其他货币（包括新元、人民币）相对变弱，出国消费、美元资产换算都会受影响。原因是作者的归纳。</p>
+          </div>
+        </article>
+        </div>
+        <nav class="pager" aria-label="Day navigation">
+          <a class="pager-prev" rel="prev" href="2026-11-26.html"><span class="pager-kicker">← Previous day</span><span class="pager-title">Thursday, November 26, 2026</span></a>
+          <span class="pager-next"></span>
+        </nav>
+      </article>
+      </div>
+      <div class="row">
+        <div class="rail"></div>
+        <footer class="col site-footer">
+          <p>Posts quoted from <a href="https://x.com">X</a>, updated twice a day.</p>
+        </footer>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
